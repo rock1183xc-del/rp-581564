@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026/09/06 社群復盤・26 分</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ink:#141414; --ink2:#4a4a4a; --line:#e2e2e2;
+  --red:#E02424; --redbg:#FFF0F0;
+  --green:#0B7A3B; --greenbg:#EAF7EF;
+  --blue:#1257C7; --bluebg:#EDF3FF;
+  --amber:#B45309; --amberbg:#FFF6E5;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);
+  font-family:'Noto Sans TC',-apple-system,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 100px}
+header{border-bottom:6px solid var(--ink);padding:34px 0 22px;margin-bottom:30px}
+.kicker{font:700 13px/1 var(--mono);letter-spacing:.14em;color:var(--ink2);margin-bottom:12px}
+h1{font-size:34px;font-weight:900;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--ink2);font-size:14px}
+.scorebar{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin:26px 0 8px}
+.score{background:var(--red);color:#fff;padding:16px 26px;border-radius:4px;min-width:180px}
+.score .n{font:900 52px/1 var(--mono)}
+.score .n small{font-size:20px;font-weight:700;opacity:.85}
+.score .cap{font-size:12px;font-weight:700;margin-top:6px;opacity:.95}
+.qbox{flex:1;min-width:270px;display:flex;flex-direction:column;gap:6px}
+.q{display:flex;gap:10px;align-items:baseline;padding:7px 12px;border-radius:4px;font-size:14px}
+.q.fail{background:var(--redbg);border-left:5px solid var(--red)}
+.q.pass{background:var(--greenbg);border-left:5px solid var(--green)}
+.q b{font:700 13px var(--mono);min-width:22px}
+.q .v{font-weight:700;margin-left:auto;white-space:nowrap}
+.q.fail .v{color:var(--red)} .q.pass .v{color:var(--green)}
+h2{font-size:22px;font-weight:900;margin:52px 0 4px;padding-top:20px;border-top:3px solid var(--ink)}
+h2 .num{font:700 14px var(--mono);color:var(--ink2);display:block;margin-bottom:4px}
+h3{font-size:17px;font-weight:700;margin:30px 0 10px}
+p{margin:10px 0}
+.lead{font-size:19px;font-weight:700;line-height:1.85;background:var(--redbg);border-left:6px solid var(--red);padding:18px 22px;border-radius:4px;margin:18px 0 4px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:#f6f6f6;font-weight:700;font-size:13px;white-space:nowrap}
+td.n,th.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+tr.bad td{background:var(--redbg)}
+tr.good td{background:var(--greenbg)}
+.tag{display:inline-block;font:700 11px/1.5 var(--mono);padding:2px 7px;border-radius:3px;vertical-align:2px}
+.tag.f{background:var(--red);color:#fff} .tag.p{background:var(--green);color:#fff}
+.tag.w{background:var(--amber);color:#fff} .tag.i{background:var(--blue);color:#fff}
+blockquote{margin:14px 0;padding:14px 18px;background:#f7f7f7;border-left:5px solid var(--ink2);
+  font-family:var(--mono);font-size:13.5px;line-height:1.95;white-space:pre-wrap;border-radius:0 4px 4px 0;overflow-x:auto}
+blockquote .hi{background:#FFE9A8;font-weight:700;padding:1px 2px}
+blockquote .cmt{color:var(--red);font-weight:700}
+.quote{font-family:var(--mono);font-size:13.5px;background:#f7f7f7;padding:2px 6px;border-radius:3px}
+.card{border:2px solid var(--line);border-radius:6px;padding:18px 20px;margin:16px 0}
+.card.red{border-color:var(--red);background:var(--redbg)}
+.card.green{border-color:var(--green);background:var(--greenbg)}
+.card.blue{border-color:var(--blue);background:var(--bluebg)}
+.card.amber{border-color:var(--amber);background:var(--amberbg)}
+.card h4{margin:0 0 8px;font-size:16px;font-weight:900}
+.card.red h4{color:var(--red)} .card.green h4{color:var(--green)}
+.card.blue h4{color:var(--blue)} .card.amber h4{color:var(--amber)}
+.prop{border:2px solid var(--blue);border-radius:6px;margin:18px 0;overflow:hidden}
+.prop .hd{background:var(--blue);color:#fff;padding:10px 18px;font-weight:900;font-size:15px}
+.prop .bd{padding:16px 20px}
+.prop .rule{background:var(--bluebg);border-left:5px solid var(--blue);padding:12px 16px;margin:12px 0 0;font-size:14px;font-weight:700}
+ul{margin:10px 0;padding-left:22px} li{margin:6px 0}
+.trend{display:flex;gap:5px;flex-wrap:wrap;align-items:flex-end;margin:14px 0;font-family:var(--mono)}
+.trend .d{text-align:center;font-size:11px;color:var(--ink2)}
+.trend .bar{width:40px;background:#c9c9c9;border-radius:2px 2px 0 0;margin-bottom:4px}
+.trend .d.cur .bar{background:var(--red)} .trend .d.cur{color:var(--red);font-weight:700}
+.trend .d.gap .bar{background:repeating-linear-gradient(45deg,#eee,#eee 4px,#ddd 4px,#ddd 8px)}
+footer{margin-top:60px;padding-top:20px;border-top:2px solid var(--line);font-size:13px;color:var(--ink2)}
+@media(max-width:700px){h1{font-size:26px}.score .n{font-size:42px}.wrap{padding:0 14px 60px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">LINE 社群 · 每日復盤 · 行銷大師判準</div>
+<h1>2026/09/06（六）社群復盤</h1>
+<div class="sub">五館實撈 289 則 · 硬數字人工重算 · bot 給 55 分（數字全錯，見 §7）</div>
+
+<div class="scorebar">
+<div class="score"><div class="n">26<small>/100</small></div><div class="cap">Q1 沒過 → 封頂 50<br>三題全沒過</div></div>
+<div class="qbox">
+<div class="q fail"><b>Q1</b><span>新人知道必瘦組是什麼嗎</span><span class="v">沒過（連 13 天）</span></div>
+<div class="q fail"><b>Q2</b><span>新人會覺得它是必須嗎</span><span class="v">沒過</span></div>
+<div class="q fail"><b>Q3</b><span>滑完記得住哪個畫面嗎</span><span class="v">沒過</span></div>
+</div>
+</div>
+
+<div class="trend">
+<div class="d"><div class="bar" style="height:28px"></div>8/28<br>28</div>
+<div class="d"><div class="bar" style="height:38px"></div>8/29<br>38</div>
+<div class="d"><div class="bar" style="height:34px"></div>8/30<br>34</div>
+<div class="d"><div class="bar" style="height:38px"></div>8/31<br>38</div>
+<div class="d"><div class="bar" style="height:26px"></div>9/1<br>26</div>
+<div class="d"><div class="bar" style="height:24px"></div>9/2<br>24</div>
+<div class="d"><div class="bar" style="height:32px"></div>9/3<br>32</div>
+<div class="d gap"><div class="bar" style="height:20px"></div>9/4<br>漏跑</div>
+<div class="d"><div class="bar" style="height:36px"></div>9/5<br>36</div>
+<div class="d cur"><div class="bar" style="height:26px"></div>9/6<br>26</div>
+</div>
+
+</header>
+
+<p class="lead">26 個真路人提問，只有 3 個被我方接住（11.5%）。<br>
+我方在 19:00–21:32 整整 2.5 小時零則，而真路人在那段時間發了 71 則。<br>
+全天最後一句話，是真路人跟真路人說「現在有 gpt 可以問他」。</p>
+
+<blockquote>09/06 22:50 [就瘦了2館] 王六：想提問 台版、日版跟陸版有什麼差異 價格而已嗎 還是效果也不一樣？
+09/06 23:06 [就瘦了2館] 安東：<span class="hi">現在有gpt可以問他</span>   <span class="cmt">← 全天最後一則。我方最後一則停在 21:45。</span></blockquote>
+
+<div class="card amber">
+<h4>⚠️ 先讀：本份的資料缺口</h4>
+<p><b>五館裡有四館的訊息在 09/06 10:48–10:55 之後全部消失</b>（就瘦了4館 10:48／快樂瘦3館 10:48／快樂瘦2館 10:54／猛健樂 10:55），只有「就瘦了2館」有到 23:06。<br>
+以 <span class="quote">hours=40</span> 與 <span class="quote">hours=24</span> 各撈一輪，結果一模一樣（<span class="quote">reached_cutoff: true</span>，非分頁截斷）；同一次撈取拿得到這四館 09/05 16:15 之後的全部訊息，<b>撈取機制本身是好的</b>。<br>
+<b>bot 報「今日訊息 461」，實撈 289，差 172 則無法解釋</b> —— 已驗證 bot 引到的 <span class="quote">03:38 詐騙廣告</span>、<span class="quote">07:32 這不都是詐騙嗎</span>、<span class="quote">18:23 要轉幾格</span> 三則在歷史裡都不存在，<b>＝歷史回撈拿不到已刪／已收回的訊息</b>（本輪新確認）。<br>
+本頁所有數字以實撈 289 則為準，<b>⛔ 不要當成毫無缺口的全日數字用</b>。</p>
+</div>
+
+<h2><span class="num">§1</span>三題評分（強制引原句）</h2>
+
+<h3><span class="tag f">FAIL</span> Q1 新人知道必瘦組是什麼嗎 —— 8/25 起連 13 天沒過</h3>
+<p>產品名<b>第一次出現</b>＝<span class="quote">07:36 淩淩</span>：「9/6 #必瘦組排便順暢好瘦身」＋圖，五館同步，往上追不到任何東西。第二次＝<span class="quote">08:26 阿玉@</span>「<b>目前必瘦組猛健樂的 1+1 方案</b>」＝方案名，不是內容。</p>
+<p>唯一一次被正面問到，三個人回了三句 ——</p>
+<blockquote>08:35 石昕彤：<span class="hi">請問必瘦組是那種拉肚子腹瀉的拉嗎😳</span>
+08:36 阿玉@：不是誒 喝一個月了都沒有那種拉到虛脫的感覺      <span class="cmt">← 它不是什麼</span>
+08:37 鳳姐：必瘦組的產品都有國家認證                       <span class="cmt">← 權威背書</span>
+08:37 鳳姐：纖歲茶也是經過檢驗不含瀉藥的                   <span class="cmt">← 又是它不是什麼</span></blockquote>
+<p><b>三句全部是「它不是什麼」＋權威背書，沒有一句是「它是什麼」。</b><br>
+<span class="quote">13:57 鳳姐</span>那則 350 字長文（全天最長訊息）講的是「版主會安排／會調整／會保留下來／好的環境與體管師」＝<b>問名詞答流程</b>（9/3 標過、9/5 標過，<b>今天第三次</b>）。<br>
+全天唯一講到內容物的一句是 <span class="quote">21:38 麗雲</span>「裡面像百卡就有蛋白質 維生素跟礦物質 比較不用自己一樣一樣找」—— 一句、單館，<b>而且發話的是我方樁腳</b>（見 §2）。</p>
+
+<h3><span class="tag f">FAIL</span> Q2 新人會覺得它是必須嗎</h3>
+<p>全天<b>零量化缺口</b>。9/5 那條「25–35 克 → 燙青菜不到一半 → 便當不到 10 克 → 我確定不夠了」的鏈，昨天一條都沒有。</p>
+<blockquote>08:38 石昕彤：<span class="hi">那要買要找誰？我是打猛後便秘更嚴重的😭</span>
+08:39 芷涵：請私訊版版 💬 點連結直接加入即可開始妳的蛻變💛 ID：@443nvzge …
+08:39 芷涵：@石昕彤 這邊私訊里長夫人～ 他會先了解你的狀況給你適合的建議😉
+<span class="cmt">他問的是「為什麼是它」，60 秒內拿到的是「去哪買」。</span></blockquote>
+<p>另一次：<span class="quote">21:37 .亮亮</span>「你搭的必瘦組跟自己買來補差在哪啊？」→ <span class="quote">21:38 麗雲</span>「比較不用自己一樣一樣找」＝<b>省事，不是必須</b>。</p>
+
+<h3><span class="tag f">FAIL</span> Q3 滑完記得住哪個畫面嗎</h3>
+<p>全日圖片 <b>42 張：自己人 35／路人 7</b>。我方素人生活實拍 <b>4 組</b>（12:43 想瘦瘦的「午餐」、12:52 Lilly li「午餐吃爭鮮」、12:57 小姐姐 hashtag 圖、18:33 小姐姐「9/6晚餐」）—— <b>四組全部零回應、零追問</b>。</p>
+<div class="card red">
+<h4>全天唯一被追問的畫面，是真路人自己拍的，而且方向對我方不利</h4>
+<blockquote style="margin:0">13:32 珍珠：[圖片] 請問各位群友這是里長夫人幫我搭配的產品組合…多久會瘦？
+13:34 （群內）：<span class="hi">你買的太貴了喔</span>              <span class="cmt">← 我方零回應</span>
+13:46 MJP：有人喝過里長夫人推薦的味道喝起來怎樣啊⋯
+13:46 猴猴：請問這些組合是幾天份？</blockquote>
+<p style="margin-bottom:0"><b>唯一記得住的畫面，是一張被說「太貴」的訂單照。</b></p>
+</div>
+
+<h2><span class="num">§2</span>硬數字（程式算，不是模型講的）</h2>
+<table>
+<tr><th>指標</th><th class="n">實際</th><th class="n">bot 報的</th><th>差</th></tr>
+<tr><td>全日訊息（五館・已扣已刪）</td><td class="n">289</td><td class="n">461</td><td>差 172，見上方缺口</td></tr>
+<tr class="bad"><td>自己人 : 路人 發言</td><td class="n">181 : 108<br>62.6% : 37.4%</td><td class="n">0 : 461</td><td>bot 自己人判定<b>第 14 天</b>失效</td></tr>
+<tr class="bad"><td>路人開口人數</td><td class="n">35（人工扣 .亮亮 → 34）</td><td class="n">120</td><td>灌水 3.5 倍</td></tr>
+<tr><td>真路人提問總數（跨館去重）</td><td class="n">26</td><td class="n">—</td><td></td></tr>
+<tr class="bad"><td><b>真路人提問被我方接住</b></td><td class="n">3 ＝ 11.5%</td><td class="n">未計</td><td>見 §3</td></tr>
+<tr class="bad"><td><b>真路人提問 30 分內我方零回應</b></td><td class="n">23 / 26 ＝ 88%</td><td class="n">未計</td><td><b>R12 系列史上最差</b><br>8/30 47% → 9/5 32% → <b>9/6 88%</b></td></tr>
+<tr class="bad"><td>圖片</td><td class="n">42（自己人 35／路人 7）</td><td class="n">素人 78：官方 0</td><td>方向完全相反</td></tr>
+<tr class="bad"><td>我方素人生活實拍</td><td class="n">4 組（全部零回應）</td><td class="n">78</td><td></td></tr>
+<tr><td>「必瘦組」提及（去重）</td><td class="n">11（自己人 10／路人 1）</td><td class="n">—</td><td>那 1 則是我方樁腳</td></tr>
+<tr class="bad"><td><b>真路人問「必瘦組是什麼／內容」</b></td><td class="n">0</td><td class="n">資訊型 2</td><td><b>26 個提問裡跟產品有關的＝零</b></td></tr>
+<tr><td>真路人提問含價格／診所</td><td class="n">5</td><td class="n">價格型 1</td><td></td></tr>
+<tr><td>跨館一字不差（≥8 字）</td><td class="n">22 句</td><td class="n">—</td><td>其中 13 句同時出現在 5 個館</td></tr>
+</table>
+
+<h3>各館腳本濃度</h3>
+<table>
+<tr><th>館</th><th class="n">則數</th><th class="n">自己人</th><th class="n">路人</th><th class="n">路人開口</th><th class="n">濃度</th><th class="n">末則</th></tr>
+<tr><td>就瘦了2館</td><td class="n">170</td><td class="n">63</td><td class="n">107</td><td class="n">34 人</td><td class="n">37%</td><td class="n">23:06</td></tr>
+<tr><td>猛健樂</td><td class="n">39</td><td class="n">38</td><td class="n">1</td><td class="n">1 人</td><td class="n">97%</td><td class="n">10:55</td></tr>
+<tr class="bad"><td>快樂瘦2館</td><td class="n">33</td><td class="n">33</td><td class="n">0</td><td class="n">0 人</td><td class="n">100%</td><td class="n">10:54</td></tr>
+<tr class="bad"><td>快樂瘦3館</td><td class="n">24</td><td class="n">24</td><td class="n">0</td><td class="n">0 人</td><td class="n">100%</td><td class="n">10:48</td></tr>
+<tr class="bad"><td>就瘦了4館</td><td class="n">23</td><td class="n">23</td><td class="n">0</td><td class="n">0 人</td><td class="n">100%</td><td class="n">10:48</td></tr>
+</table>
+<p><b>快樂瘦2館／快樂瘦3館／就瘦了4館 三館合計 80 則，路人發言 0 則、開口 0 人 —— 純廣播。</b><br>
+（8/30、9/3、9/5 都標過兩館，<b>這是第四次，而且今天是三館</b>。）</p>
+
+<h3>我方在版面上的時段 vs 真路人在的時段</h3>
+<table>
+<tr><th class="n">時</th><th class="n">自己人</th><th class="n">真路人</th><th>備註</th></tr>
+<tr><td class="n">03</td><td class="n">0</td><td class="n">5</td><td></td></tr>
+<tr><td class="n">07</td><td class="n">10</td><td class="n">1</td><td></td></tr>
+<tr class="bad"><td class="n">08</td><td class="n">100</td><td class="n">1</td><td><b>我方全天 181 則裡有 100 則塞在這 15 分鐘</b></td></tr>
+<tr><td class="n">10</td><td class="n">42</td><td class="n">5</td><td></td></tr>
+<tr><td class="n">12</td><td class="n">6</td><td class="n">6</td><td></td></tr>
+<tr><td class="n">13</td><td class="n">5</td><td class="n">7</td><td>唯一真的有來有往的一小時</td></tr>
+<tr class="bad"><td class="n">14</td><td class="n">0</td><td class="n">5</td><td></td></tr>
+<tr><td class="n">18</td><td class="n">2</td><td class="n">4</td><td></td></tr>
+<tr class="bad"><td class="n">19</td><td class="n">0</td><td class="n">31</td><td><b>真路人最熱的一小時，我方 0</b></td></tr>
+<tr class="bad"><td class="n">20</td><td class="n">0</td><td class="n">8</td><td></td></tr>
+<tr><td class="n">21</td><td class="n">14</td><td class="n">32</td><td>唯一的晚間腳本（單館）</td></tr>
+<tr class="bad"><td class="n">22–23</td><td class="n">0</td><td class="n">2</td><td>我方最後一則停在 21:45</td></tr>
+</table>
+
+<h3>自己人怎麼判的（不只看名單）</h3>
+<p>行為判定六條聯集：① 角色帳號　② IRON_FANS 名單　③ 同句 ≥8 字跨 ≥2 館　④ 同帳號跨 ≥3 館　⑤ 2–7 字短句同分鐘跨 ≥2 館　⑥ <b>貼我方 CTA 罐頭／我方 hashtag 格式（9/5 提的新第⑥條，本輪首次實作）</b>。<br>
+共抓出 <b>14 個帳號，只有 3 個在 IRON_FANS 名單上</b>（芸婷／淩淩／鳳姐）。</p>
+<div class="card green">
+<h4>✅ 第 ⑥ 條當天就抓到 2 個前五條全部漏掉的單館樁腳</h4>
+<ul style="margin-bottom:0">
+<li><b>麗雲</b> —— 21:45 貼的連結<b>跟 08:39 芷涵在同一館貼的一字不差</b>（<span class="quote">ID：@443nvzge</span>／<span class="quote">https://reurl.cc/Q2QWnq</span>）</li>
+<li><b>想瘦瘦的</b> —— 12:49「#餐餐熱量少25% #搭配必瘦套組 #減脂不累」＝我方 hashtag 格式</li>
+</ul>
+</div>
+<div class="card red">
+<h4>🔴 仍然漏掉的：<code>.亮亮</code>（六條規則一條都抓不到，本輪人工判定）</h4>
+<blockquote style="margin:0">21:37 .亮亮：我也有補高蛋白 洗頭還是一直掉😓
+21:37 .亮亮：你搭的必瘦組跟自己買來補差在哪啊？
+21:40 .亮亮：多吃肉多吃菜我也知道 但打猛就吃不下啊😓
+21:42 .亮亮：好 那我來問
+21:43 .亮亮：頭髮再這樣掉真的不行🥲
+21:44 .亮亮：有里長夫人的line嗎？
+21:46 .亮亮：<span class="hi">傳了 謝謝你</span></blockquote>
+<p style="margin-bottom:0"><b>9 分鐘走完六拍，全程只在一個館、只跟一個人講話。真路人不會在拿到連結後回頭回報「傳了 謝謝你」。</b><br>
+不扣掉的話，「路人開口 35 人」與「真路人提問 26 題」都會被灌水，<b>而且會讓 21:33–21:46 那一段看起來像成交了一單</b>。</p>
+</div>
+
+<h2><span class="num">§3</span>昨天真正有人接話的是哪一段</h2>
+
+<h3>🥇 就瘦了2館 19:02–21:13「安東」串 —— 10 個真路人接力 131 分鐘，我方 0 則</h3>
+<blockquote>19:16 陳Hana：打的第十天，這幾天食欲有控制，但心情非常低落，懶懶散散⋯⋯大家𠕇這樣？
+19:16 安東：血糖太低
+19:18 安東：猛最初本來就是糖尿病患的針劑，所以有一定機率會讓妳的血糖降太快
+19:26 陳Hana：你們都不會不舒服？
+19:27 陳Hana：<span class="hi">我很像憂鬱患者</span>                    <span class="cmt">← 全天最強的求救訊號，我方零回應</span>
+19:48 ㄅㄅ：我也會心情很不好耶，平常被壓抑的生存，現在都會開始噴回去欸
+19:48 ㄅㄅ：而且噴很大力
+20:42 陳Hana：我第一針打完胃口也很好…最近打第二針，胃口就不好了，也易飽、易怒
+21:01 安東：我用地中海飲食平均一個月可以瘦0.5-1公斤／醫生說太慢
+21:05 安東：他開一隻10的給我 我的醫囑是2.5要打16週
+21:07 安東：主要是我沒在運動／我唯一有在動就是打麻將
+21:09 安東：我拿13000 我也有問過效期問題 他是說冷藏要保存好 四個月都還可以</blockquote>
+<p><b>為什麼是這一段</b>：安東交出了<b>完整、可查證、對他自己不利的處境</b> —— 我是三高＋糖尿病、醫生說我瘦太慢、我的醫囑是 2.5 打 16 週、我拿 13000、我唯一的運動是打麻將。不是丟開放問題，是<b>先把自己的底攤開</b>。<br>
+這跟 9/5 的診所價格串、9/3 的失眠串是同一個共通點 —— <b>真人只接「已經有人先落地」的話題</b>（連續第三次確認）。</p>
+<div class="card red">
+<h4>🔴 這一段裡有一個我們自己在賣的東西，正在被別人講</h4>
+<p style="margin-bottom:0">19:16「食欲有控制、心情低落、懶懶散散」、20:42「易飽、易怒」、19:48「平常被壓抑的生存，現在都會開始噴回去」<br>
+—— <b>這是「吃不下 → 少掉的那一段在扣他哪幾樣」的活教材，而且是他們自己講出來的</b>，正好就是 W37 副軸要的東西。<br>
+<b>我方 2.5 小時內沒有出現，這個素材整段流掉。</b></p>
+</div>
+
+<h3>🥈 就瘦了2館 13:32–13:58「珍珠的訂單照」串 —— 唯一被追問的畫面</h3>
+<blockquote>13:32 珍珠：[圖片] 這是里長夫人幫我搭配的產品組合…可以請教吃的感覺如何？多久會瘦？
+13:34 （群內）：<span class="hi">你買的太貴了喔</span>                <span class="cmt">← 我方零回應</span>
+13:46 MJP：有人喝過里長夫人推薦的味道喝起來怎樣啊⋯不太喜歡泡來喝的那種
+13:46 猴猴：請問這些組合是幾天份？
+13:55 芷涵：像纖歲茶有抹茶奶茶 喝起就是抹茶拿鐵和立頓奶茶味   <span class="cmt">← ✅ 全天答得最好的一句（9 分鐘、具體）</span>
+13:57 鳳姐：（350 字長文：版主會調整／會保留／好的環境與體管師…） <span class="cmt">← 問幾天份，答的是流程</span>
+13:57 珍珠：他說是兩個月至三個月                        <span class="cmt">← 路人自己替我方回答了</span>
+13:58 鳳姐：我是五年前用必瘦組瘦下來的 至今沒有復胖         <span class="cmt">← 療效宣稱，見 §6</span></blockquote>
+
+<h2><span class="num">§4</span>全天真路人 26 個提問，跟產品有關的是 0 個</h2>
+<table>
+<tr><th>真路人問了什麼</th><th class="n">幾題</th></tr>
+<tr><td>針本身（劑量／效期／副作用／打哪裡／一支打幾次）</td><td class="n">17</td></tr>
+<tr><td>價格／診所</td><td class="n">5</td></tr>
+<tr><td>情緒／身體不適</td><td class="n">3</td></tr>
+<tr><td>其他藥（易週糖，問了兩次）</td><td class="n">1</td></tr>
+<tr class="bad"><td><b>必瘦組是什麼／裡面有什麼／怎麼吃</b></td><td class="n"><b>0</b></td></tr>
+</table>
+<p><b>我方 08 點那一格打了 100 則、五館同步，換到的真路人產品資訊型提問＝0。</b>（8/31、9/3、9/5 都標過同型，<b>今天是第一次跌到 0</b>。）</p>
+
+<h3>被我方接住的 3 題（11.5%）</h3>
+<table>
+<tr><th>時間</th><th>誰</th><th>問什麼</th><th>我方</th><th>落差</th></tr>
+<tr class="good"><td class="n">13:46</td><td>MJP</td><td>味道喝起來怎樣</td><td>13:55 芷涵「抹茶拿鐵和立頓奶茶味」</td><td>✅ 9 分鐘、具體、可想像</td></tr>
+<tr><td class="n">13:46</td><td>猴猴</td><td>這些組合是幾天份</td><td>13:57 鳳姐 350 字流程</td><td>⚠️ 答非所問，最後 13:57 珍珠自己回答</td></tr>
+<tr><td class="n">13:32</td><td>珍珠</td><td>多久會瘦</td><td>13:57 鳳姐（同上）</td><td>⚠️ 25 分鐘、部分</td></tr>
+</table>
+
+<h3>沒被接住的 23 題裡，最貴的三題</h3>
+<blockquote>03:15 Sin：請問有人知道打猛建樂完 頭都會很痛 <span class="hi">止痛藥沒用</span>怎麼辦嗎        <span class="cmt">← 只有真路人猴猴接</span>
+19:27 陳Hana：<span class="hi">我很像憂鬱患者</span>                                <span class="cmt">← 我方零回應</span>
+22:50 王六：想提問 台版、日版跟陸版有什麼差異 價格而已嗎 還是效果也不一樣？
+23:06 安東：<span class="hi">現在有gpt可以問他</span>                            <span class="cmt">← 昨天最該記住的一句</span></blockquote>
+<p><b>我們沒有輸給別的品牌，我們是把提問流量讓給了聊天機器人。</b></p>
+
+<h2><span class="num">§5</span>紅線勾稽</h2>
+<table>
+<tr><th>條</th><th>判</th><th>原句與出處</th></tr>
+<tr class="bad"><td>R1</td><td><span class="tag f">fail</span></td><td><span class="quote">08:26 阿玉@</span>（五館同步）「<b>用了一個月從72瘦到69🎉</b>…<b>現在是每天早上準時報到了😘</b>」；<span class="quote">21:33 麗雲</span>「<b>已經瘦7公斤嚕</b>～😘 <b>之前一直掉頭髮的狀況也沒了</b> <b>現在每天都可以順順上廁所</b>」。<b>兩則都是我方帳號自己發的。</b></td></tr>
+<tr class="bad"><td>R1b</td><td><span class="tag f">fail</span></td><td>上面兩則是同一個模子：〔時長〕＋〔公斤數〕＋〔掉髮沒了〕＋〔排便順了〕。早上一則、晚上一則，<b>句型完全可以疊圖</b>。8/26、8/27、8/29、9/1 標過同型。</td></tr>
+<tr class="bad"><td>R3</td><td><span class="tag f">fail</span></td><td><span class="quote">13:34「你買的太貴了喔」</span>—— 全天最刺的降級語言，<b>我方零回應</b>。13:55／13:57／13:58 芷涵與鳳姐在同一館連發三則，<b>沒有一個字碰價格</b>。沉默＝默認「里長夫人搭的比較貴」。</td></tr>
+<tr class="bad"><td>R4</td><td><span class="tag f">fail</span></td><td><b>形式相反、性質更糟</b>：不是收尾落在自己人，是<b>我方根本沒有收尾</b>。我方最後一則 21:45，之後 <b>81 分鐘無人</b>，版面最後一句是 23:06 安東「現在有gpt可以問他」。<b>連續第 10 天在收尾這條失分。</b></td></tr>
+<tr class="bad"><td>R5</td><td><span class="tag f">fail</span></td><td>① <span class="quote">19:18 安東</span>「猛最初本來就是糖尿病患的針劑，<b>所以有一定機率會讓妳的血糖降太快</b>」（用來解釋別人的憂鬱症狀）；② <span class="quote">19:23</span>「我的醫生說保存好可以使用四個月」對上 <span class="quote">19:26 RuRu0518</span>「說明書寫開封後一個月內要打完？」；③ 🔴 <span class="quote">19:28 安東</span>「<b>說明書要嚴謹，出了事才能甩鍋…很多超過一些的也都在停</b>」＝公開教人無視藥品仿單效期。<b>三則全部無人糾正。</b></td></tr>
+<tr class="good"><td>R6</td><td><span class="tag p">pass</span></td><td>昨天沒有「沒來源的原來如此」型。bot 判 <span class="quote">10:50 芷涵</span>是 R6 fail <b>是誤判</b> —— 芷涵是我方角色帳號（跨 3 館），這是我方衛教不是素人發現。（但它另外踩到 §6 合規線。）</td></tr>
+<tr><td>R10</td><td><span class="tag w">warn</span></td><td>08:26–08:40 五館同步 15 分鐘 100 則；13:57 鳳姐單則 350 字（全天最長，中間 30 個換行）。</td></tr>
+<tr class="bad"><td>R11</td><td><span class="tag f">fail</span></td><td>該叫就醫的三個人全部沒被叫：<span class="quote">03:15 Sin</span>「頭都會很痛 止痛藥沒用」、<span class="quote">19:27 陳Hana</span>「我很像憂鬱患者」、<span class="quote">19:02 も</span>「打的第六天一直拉水」—— <b>全部零回應</b>。<br><b>而 10:50 芷涵對自己人小不點問「要不要升 5mg」，2 分鐘內給了完整劑量建議。</b>劑量建議給了自己人，就醫提醒沒給真的需要的人。（9/5 標過同型，今天第 2 天。）</td></tr>
+<tr class="bad"><td>R12</td><td><span class="tag f">fail</span></td><td><b>真路人提問 30 分內我方零回應 23/26 ＝ 88%</b>（8/30 47% → 9/5 32% → <b>9/6 88%</b>），史上最差。</td></tr>
+<tr class="bad"><td>R16<br><span style="font-size:11px">(9/3 提案中)</span></td><td><span class="tag f">fail</span></td><td>常駐 CTA 罐頭「<b>請私訊版版 💬 點連結直接加入即可開始妳的蛻變💛 ID：@443nvzge</b>」昨天出現 <b>2 次</b>（08:39 芷涵四館／21:45 麗雲一館），<b>一字不差</b>。9/2 就是這一句讓真客戶說出「彷彿是來到一個直銷群組」。</td></tr>
+</table>
+
+<h2><span class="num">§6</span>🚩 合規（只標風險，⛔ 不代改、不預先軟化）</h2>
+<div class="card amber">
+<h4>① 公開處方藥價格／點名診所，我方零管理，而且昨天連群規都沒貼</h4>
+<p>全五館 grep：<span class="quote">群規</span> 0 則、<span class="quote">禁止公開診所</span> 0 則、<span class="quote">轉讓私售</span> 0 則、<span class="quote">不提供醫療行為</span> 0 則 —— <b>昨天一次都沒貼</b>（9/5 那天至少 19:14 有貼）。</p>
+<blockquote style="margin:0">08:39 Cathy：我一個月前在台中的一家診所 猛健樂5mg 一支16000還17000元 比大家的貴很多
+19:16 可可：請問雲林虎尾斗南斗六有推薦打猛健樂的診所？
+21:07 該減肥的小胖子：請問10mg的價位？　→ 21:11：我問10mg/1w5
+21:09 安東：我拿13000　→ 21:12：台北市聯合醫院都是12900（不含掛號費）
+21:34 Sk：請問有推薦六張犁或科技大樓附近比較便宜可以買到的診所嗎</blockquote>
+</div>
+<div class="card amber">
+<h4>② 我方帳號自己發的療效／不復胖宣稱</h4>
+<ul style="margin-bottom:0">
+<li><span class="quote">13:58 鳳姐</span>：「<b>我是五年前用必瘦組瘦下來的　至今沒有復胖👍</b>」</li>
+<li><span class="quote">08:26 阿玉@</span>：「用了一個月從72瘦到69」＋「現在是每天早上準時報到了」</li>
+<li><span class="quote">21:33 麗雲</span>：「兩個月瘦7公斤」＋「之前一直掉頭髮的狀況也沒了」</li>
+</ul>
+</div>
+<div class="card amber">
+<h4>③ 我方角色帳號給處方藥劑量建議　④ 版面公開教人無視藥品仿單</h4>
+<ul style="margin-bottom:0">
+<li><span class="quote">10:50 芷涵</span>「不一定要升喔！如果目前2.5體重每週都還有穩穩掉0.5公斤以上」「其實不用急著往上加」—— 對象是自己人，但<b>在五館之中的三館公開發出</b>。</li>
+<li><span class="quote">19:28 安東</span>（真路人）「說明書要嚴謹，出了事才能甩鍋…很多超過一些的也都在停」—— 我方零管理。</li>
+</ul>
+</div>
+
+<h2><span class="num">§7</span>🔒 要回頭改的判準（只標不改，判準是操盤手的權責）</h2>
+
+<div class="card red">
+<h4>🔴 提案一（最重要）：新增 R12e —— 我方「在場時數」下限</h4>
+<p>現有 R12 系列量的是「回應率」，但昨天真正的病灶不是回得慢，是<b>根本不在場</b>：</p>
+<table style="margin-top:0">
+<tr><th></th><th class="n">我方則數</th><th class="n">真路人則數</th></tr>
+<tr><td>08 點（腳本檔期）</td><td class="n">100</td><td class="n">1</td></tr>
+<tr><td>14 點</td><td class="n">0</td><td class="n">5</td></tr>
+<tr class="bad"><td><b>19–20 點</b></td><td class="n"><b>0</b></td><td class="n"><b>39</b></td></tr>
+<tr><td>22–23 點</td><td class="n">0</td><td class="n">2</td></tr>
+</table>
+<p><b>我方全天 181 則，有 100 則塞在同一格 15 分鐘裡。</b></p>
+<blockquote style="margin-bottom:8px">R12e　我方全日發言若有 &gt;50% 落在單一小時，且真路人發言最密集的兩個小時我方零則
+      → fail，且直接封頂 40</blockquote>
+<p style="margin-bottom:0">理由：這一條抓的是<b>排程本身</b>，不是稿子。昨天五本稿的品質完全沒被檢驗到，因為它們發在沒有人的時段。<b>這是本週策劃最該吃的一條。</b></p>
+</div>
+
+<div class="card red">
+<h4>🔴 提案二：自己人判定第 ⑥ 條要再加一款「六拍樁腳」（連續第 2 天提）</h4>
+<p>9/5 提的第 ⑥ 條（CTA 罐頭／我方 hashtag）<b>今天生效了，當天抓到 2 個</b>（麗雲、想瘦瘦的）。但 <code>.亮亮</code> 還是漏掉。</p>
+<blockquote style="margin-bottom:8px">⑥-b　同一帳號在單一館、20 分鐘內完成〔自曝痛點 → 問產品差別 → 自曝障礙 → 表示要去問
+      → 索取連結 → 回報已私訊〕其中 ≥4 拍　→ 判為自己人（不論在幾個館、不論在不在名單上）</blockquote>
+<p style="margin-bottom:0">不修的話「路人開口人數」跟「真路人提問數」會一直被灌水，<b>而且會把設計好的成交演出算成真實成交</b>。</p>
+</div>
+
+<div class="card red">
+<h4>🔴 提案三：Q1 的「沒過」要細分成兩種，因為修法完全不同</h4>
+<table style="margin-top:0">
+<tr><th>型</th><th>版面症狀</th><th>昨天的原句</th><th>修法</th></tr>
+<tr><td>Q1-a 沒人問</td><td>產品名只在 hashtag 與見證裡飄</td><td>07:36「#必瘦組排便順暢好瘦身」</td><td>稿子端：把定義塞進去</td></tr>
+<tr class="bad"><td><b>Q1-b 有人問但答錯</b></td><td><b>答「它不是什麼」＋權威背書</b></td><td>08:36「不是那種拉到虛脫的」<br>08:37「都有國家認證」「不含瀉藥」</td><td>🔴 <b>這是新的</b>，要獨立成一條</td></tr>
+<tr><td>Q1-c 問名詞答流程</td><td>答「版主會幫你調整」</td><td>13:57 的 350 字全在講體管師與環境</td><td>9/3、9/5 已標，<b>今天第三次</b></td></tr>
+</table>
+<blockquote style="margin-bottom:8px">R17　被問「這是什麼」時，回覆若只由〔它不是 X〕〔它有 Y 認證〕構成，
+     全篇沒有一句〔它裡面是什麼／它補的是哪一格〕→ Q1 直接判沒過，且該則計入 fail</blockquote>
+<p style="margin-bottom:0"><b>昨天三個回答的人（阿玉@／鳳姐／麗雲）沒有一個講錯話，他們只是全部都在講「它不是什麼」。</b>這不是寫手的疏失，是判準裡沒有這一條。</p>
+</div>
+
+<div class="card amber">
+<h4>⚠️ 提案四（舊帳）：<code>USER_TEMPLATE</code> 的自己人分類還綁 <code>{iron_fans}</code> 名單</h4>
+<p style="margin-bottom:0">2026-08-24 標過，<b>今天第 14 天</b>。昨天 14 個自己人裡只有 3 個在名單上（21.4%）。</p>
+</div>
+
+<h2><span class="num">§8</span>今天（9/7）要發的稿，有沒有踩到同樣的坑</h2>
+<p>今天要發兩本：<span class="quote">0907LT_停滯期_交稿.md</span>（LT・停滯期）＋ <span class="quote">0907_大腳本A_打了是不是想吃什麼都可以.md</span>。</p>
+
+<h3>✅ 已經修掉的（值得記一筆）</h3>
+<table>
+<tr><th>昨天的坑</th><th>今天的稿</th></tr>
+<tr class="good"><td><b>R3 降級語言沒被接住</b><br>（13:34「你買的太貴了喔」零回應）</td><td>✅ 大腳本 <b>第 39–40 則</b>把它演出來了：<code>群友B</code>「講到最後還是在賣必瘦組啦／沒力就是瘦下來的正常現象吧 瘦完就好了啊」→ <code>新粉1</code>「<b>可是我瘦完之後 那個沒力沒有跟著好／我是補回去之後才好的</b>」＝<b>正面回答，不是退回給讀者</b>。9/5 標的「自己丟球自己漏接」已修。</td></tr>
+<tr class="good"><td><b>Q1-b 用否定定義</b></td><td>✅ 大腳本 <b>第 36 則</b>鳳姐：「不是喔～它是照你現在的狀況搭起來的一組 <b>有粉的 有錠的 也有含著就化開的</b> 一組大概是一個月的量 早上晚上分開」＝<b>全週第一次講到形態與週期</b>。</td></tr>
+<tr class="good"><td><b>R1 加速器語言</b></td><td>✅ LT 交稿檔已 grep：「貴的是那個先問」永久下架、<b>全篇零公斤數</b>；大腳本零速度承諾。</td></tr>
+</table>
+
+<h3>🔴 要點名的三件</h3>
+<div class="card red">
+<h4>① 🔴🔴 <code>0907LT_停滯期_交稿.md</code> 的 Q6，用的正是昨天讓 Q1 沒過的那個答法</h4>
+<blockquote style="margin-bottom:8px">【Q6｜S】你們一直在講的那個必瘦組　到底是什麼
+▶ 版主版：<span class="hi">我先講它不是什麼</span>
+          它不是一罐吃到底的東西 也不是叫你把三餐吃回來
+          …
+          所以我們做的是另一件事 把那一段拆成你現在這個胃裝得下的樣子</blockquote>
+<p>昨天版面上 08:36「不是那種拉到虛脫的」→ 08:37「都有國家認證／不含瀉藥」＝三句全是否定，Q1 因此沒過。<b>今天 Q6 的第一句話是「我先講它不是什麼」。</b> 它後半有給機制，但照策劃單第⑤條，這本被明文禁止講內容物（「⛔ 零營養素清單、⛔ 零必瘦組內容物」，留給 9/11 B02）。</p>
+<p><b>🚩 這是策劃層的衝突，不是寫手的錯，要操盤手裁：</b><br>
+W37 是 Q1 主攻週，硬規定寫著「問內容物就答內容物，通路只能出現在答完之後」；<b>但主攻週的第一天（今天）兩本稿都被同一份策劃單禁止講內容物，主攻本要等到 9/11（第五天）</b>。昨天的版面已經證明：<b>只要答案是「它不是 X」，Q1 就一定不過。</b></p>
+<p style="margin-bottom:0">建議二選一 —— <b>(a)</b> 把 9/11 B02 的內容物那一格<b>提前一部分</b>給 9/7 LT 的 Q6；或 <b>(b)</b> 認了今天 Q1 還是不過，但<b>把 Q6 的第一句從「我先講它不是什麼」改掉</b>，⛔ 不要以否定開場。<br>
+（大腳本第 36 則鳳姐那句已經越過這條線了 —— <b>同一天兩本稿對同一題的深度不一致，這正是 9/8、9/10 交稿檔連續兩次掛著等裁的同一件事。</b>）</p>
+</div>
+
+<div class="card red">
+<h4>② 🔴 大腳本第 43 則把價格推去私訊，而昨天版面上真路人正在公開比價</h4>
+<blockquote style="margin-bottom:8px">43 小編：必瘦組的價錢是照每個人搭的組合算的～
+        你把狀況私給版版 他會照你的狀況跟你講你這一組怎麼算😉</blockquote>
+<p style="margin-bottom:0">昨天 13:34「你買的太貴了喔」我方零回應，21:07–21:12 又跑了一整串公開報價（13000／12900／1w5）。<b>今天這本要發進同一個場子。</b> 這一則本身沒有違規（零金額、走私訊），但它是<b>昨天那句「太貴」的正面對決點，而它選擇不對決</b>。<br>
+🚩 建議：⛔ 不改稿（合規只標不代改），但<b>運營端要準備好「公開被說太貴」時的當場回法</b> —— 昨天已經證明<b>沉默的成本是整串比價</b>。</p>
+</div>
+
+<div class="card red">
+<h4>③ 🔴 兩本稿的「就醫警訊」都沒有情緒／精神那一條，而昨天最強的求救訊號正是那一條</h4>
+<p>LT 圖卡3 下方三條就醫警訊＝「頭暈站不穩／心跳很快／月經亂掉」，Q20 把懷孕／餵奶／慢性病推回醫生。<b>沒有一條涵蓋「心情低落／易怒／很像憂鬱患者」。</b></p>
+<p style="margin-bottom:0">昨天 19:16 陳Hana「心情非常低落 懶懶散散」→ 19:27「我很像憂鬱患者」→ 20:42「易飽、易怒」，19:48 ㄅㄅ「平常被壓抑的生存，現在都會開始噴回去欸／而且噴很大力」—— <b>兩個真路人，我方零回應</b>。<br>
+🚩 <b>這一格不只是合規，它是 W37 副軸（少掉的那一段，正在扣他哪幾樣）最好的活素材，而且是他們自己講出來的。</b>建議 W38 策劃把「情緒／精神狀態」列進「被扣走的那幾樣」，並在就醫警訊裡補上一條。</p>
+</div>
+
+<footer>
+逐條記錄：<span class="quote">~/社群腳本總監/復盤_20260906.md</span>　·　
+資料：<span class="quote">/sq-history</span> REST 自撈五館（猛健樂／就瘦了2館／就瘦了4館／快樂瘦2館／快樂瘦3館），<span class="quote">hours=40</span> 與 <span class="quote">hours=24</span> 各一輪交叉驗證，濾出 09/06 當日 289 則<br>
+⚠️ 四館訊息在 10:55 後全數缺失、歷史回撈拿不到已刪訊息 —— 缺口說明見本頁最上方<br>
+判準來源：行銷大師 · LINE 社群腳本點評判準（三題＋封頂規則＋紅線 R1–R12・R16）
+</footer>
+
+</div></body></html>
