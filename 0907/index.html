@@ -124,9 +124,11 @@ footer{margin-top:60px;padding-top:20px;border-top:2px solid var(--line);font-si
 另外三館（快樂瘦2館／快樂瘦3館／就瘦了4館）撈得到 <b>09/06 18:33 → 09/07 20:47</b> 完整區段。<br>
 所以：<b>09/07 白天（07:44–18:59）的版面，只有那三館的資料；兩個大館的白天是黑的。</b>
 bot 報「今日訊息 1504、6 個社群」，我實撈五館 877 則。<b>本報告所有數字以實撈 877 則為準。</b></p>
-<p>🔴 <b>本輪又踩到 8/31 那個坑</b>：查詢字 <span class="quote">猛健樂</span> 解析到的 chat_mid 跟 <span class="quote">快樂瘦3館</span> 完全相同
-（<span class="quote">ma91b8770…</span>，180 則逐則相同）。改用查詢字 <span class="quote">猛健</span> 才拿到真正的 <span class="quote">mb4f41b9…</span>。
-<b>下一份復盤請直接用「猛健」。</b></p>
+<p>🔴 <b>本輪又撞館了，而且錯的是我</b>：我<b>平行</b>打五館 → 查詢字 <span class="quote">猛健樂</span> 解析到的 chat_mid
+跟 <span class="quote">快樂瘦3館</span> 完全相同（<span class="quote">ma91b8770…</span>，180 則逐則相同）。<br>
+<b>9/6 那份復盤已經定論過根因是「併發」不是名字</b>，我今天照樣平行打，等於自己重現了一次已知的坑。<br>
+✅ <b>本輪已驗證</b>：收工前循序單打 <span class="quote">square=猛健樂</span> → 正確回 <span class="quote">mb4f41b9…</span>（真猛健樂館）。<br>
+<b>下一份復盤：/sq-history ⛔ 不准平行打五館，一律循序一館一館打。</b>（用哪個名字都可以，名字不是變數。）</p>
 </div>
 
 <h2><span class="num">§1</span>分數 32 / 100 — 三題判定</h2>
@@ -431,7 +433,9 @@ $ grep -l "R12" ~/社群腳本總監/復盤_*.md | wc -l
 <h2><span class="num">§8</span>附：資料與工具</h2>
 <ul>
 <li>自撈：<span class="quote">POST https://line-anti-raid-bot.zeabur.app/sq-history</span>，五館 <span class="quote">hours=40, max_pages=200, resolve_names=true</span>。</li>
-<li>🔴 <b>查詢字「猛健樂」會撈到「快樂瘦3館」的內容</b>（chat_mid 相同、180 則逐則相同）→ <b>一律改用「猛健」</b>。</li>
+<li>🔴 <b>⛔ 不准平行打五館</b>：本輪平行打，「猛健樂」撈回「快樂瘦3館」的內容（chat_mid 相同、180 則逐則相同）。
+改用「猛健」重撈（那次是單打）才正確 —— <b>但真正的變數是「併發」不是「名字」</b>：收工前循序單打
+<span class="quote">square=猛健樂</span> 驗過，正確回 <span class="quote">mb4f41b9…</span>。<b>9/6 已定論過同一件事，我今天重犯。</b></li>
 <li>🔴 <b>兩個大館的歷史只能往回翻到 19:00</b>（分頁自然結束，非我方截斷）。</li>
 <li>🔴 <b>昨天版面上實際發的那一整套腳本，在 <span class="quote">~/社群腳本總監/</span> 找不到任何來源檔</b>
 （「今天體重還是沒有動靜」／「保健品都可以當正餐」／「必瘦組也是減肥藥嗎」三句 grep 全 0 命中）；<br>
