@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026/10/23 社群復盤｜32 分</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#F2F4F6;--card:#fff;--line:#DCE3EA;--soft:#F7F9FB;--tx:#10171F;--tx2:#4C5A69;--tx3:#7C8B9B;
+--ac:#12557E;--acbg:#E4EEF5;--ok:#0A6E4C;--okbg:#E2F2EA;--wn:#8F6206;--wnbg:#FAEFD8;--bad:#A92A21;--badbg:#FAE6E4;
+--sh:0 1px 2px rgba(16,23,31,.06),0 10px 28px -16px rgba(16,23,31,.25)}
+@media(prefers-color-scheme:dark){:root{--bg:#0C1116;--card:#141A21;--line:#28323C;--soft:#1A222A;--tx:#E9EEF3;--tx2:#A3B0BD;--tx3:#75838F;
+--ac:#66A9D6;--acbg:#162836;--ok:#4CC08D;--okbg:#10281F;--wn:#DDA843;--wnbg:#2A2315;--bad:#EC7A70;--badbg:#2C1A19;
+--sh:0 1px 2px rgba(0,0,0,.5),0 12px 32px -18px rgba(0,0,0,.8)}}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans TC","PingFang TC",system-ui,sans-serif;font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:900px;margin:0 auto;padding:26px 16px 90px;display:flex;flex-direction:column;gap:26px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 20px;box-shadow:var(--sh)}
+h1{font-size:25px;font-weight:900;margin:0 0 6px;letter-spacing:-.01em;line-height:1.35}
+h2{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--tx3);margin:0 0 16px;display:flex;align-items:center;gap:10px;font-family:"IBM Plex Mono",monospace}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font-size:17px;font-weight:700;margin:26px 0 10px;line-height:1.5}
+h3:first-of-type{margin-top:4px}
+p{margin:0 0 12px}
+.sub{color:var(--tx2);font-size:14.5px;margin:0}
+/* 抬頭 */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--bad)}
+.heroTop{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+.score{text-align:right;flex:none}
+.score .n{font-size:58px;font-weight:900;line-height:.95;color:var(--bad);font-family:"IBM Plex Mono",monospace}
+.score .d{font-size:12px;color:var(--tx3);letter-spacing:.1em}
+.cap{margin-top:14px;background:var(--badbg);border:1px solid var(--bad);border-radius:4px;padding:10px 13px;font-size:14px;color:var(--tx);font-weight:500}
+/* 警示 */
+.alarm{border:2px solid var(--bad);background:var(--badbg)}
+.alarm h2{color:var(--bad)}.alarm h2::after{background:var(--bad);opacity:.35}
+/* 三題 */
+.q{display:grid;grid-template-columns:62px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0;padding-top:2px}
+.qk{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:17px;color:var(--tx3)}
+.qk .b{display:block;margin-top:5px;font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:2.5px 0;text-align:center;border-radius:3px;background:var(--badbg);color:var(--bad);border:1px solid var(--bad)}
+.qk .b.p{background:var(--okbg);color:var(--ok);border-color:var(--ok)}
+.qt{font-weight:700;margin-bottom:5px}
+.qe{font-size:14.5px;color:var(--tx2)}
+/* 數字 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px}
+.tile{background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:13px 14px}
+.tile .l{font-size:11.5px;color:var(--tx3);letter-spacing:.05em;margin-bottom:5px}
+.tile .v{font-size:26px;font-weight:900;font-family:"IBM Plex Mono",monospace;line-height:1.1}
+.tile .s{font-size:12px;color:var(--tx3);margin-top:3px}
+.tile.bad .v{color:var(--bad)}.tile.ok .v{color:var(--ok)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:10px 0 4px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;color:var(--tx3);font-weight:700;background:var(--soft)}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.bad-t{color:var(--bad);font-weight:700}.ok-t{color:var(--ok);font-weight:700}
+/* 引句 */
+blockquote{margin:9px 0;padding:10px 14px;background:var(--soft);border-left:3px solid var(--ac);border-radius:0 4px 4px 0;font-size:14.5px;color:var(--tx);white-space:pre-line}
+blockquote.b{border-left-color:var(--bad)}
+blockquote.g{border-left-color:var(--ok)}
+cite{display:block;font-style:normal;font-size:12px;color:var(--tx3);margin-top:6px;font-family:"IBM Plex Mono",monospace}
+/* 紅線 */
+.rl{border:1px solid var(--line);border-radius:5px;margin-bottom:13px;overflow:hidden}
+.rlh{display:flex;align-items:center;gap:10px;padding:10px 13px;background:var(--soft);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.code{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:13px;padding:2px 8px;border-radius:3px;background:var(--badbg);color:var(--bad);border:1px solid var(--bad)}
+.code.w{background:var(--wnbg);color:var(--wn);border-color:var(--wn)}
+.code.g{background:var(--okbg);color:var(--ok);border-color:var(--ok)}
+.rlt{font-weight:700;font-size:15px}
+.rlc{padding:13px}
+.src{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--tx3)}
+/* 值班條 */
+.hr{display:grid;grid-template-columns:38px 1fr 76px;gap:9px;align-items:center;font-size:13px;padding:2.5px 0}
+.hr .h{font-family:"IBM Plex Mono",monospace;color:var(--tx3);font-size:12px}
+.bar{display:flex;height:15px;border-radius:2px;overflow:hidden;background:var(--soft)}
+.bar i{display:block;height:100%}
+.bi{background:var(--ac)}.bo{background:var(--bad)}
+.hr .c{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--tx3);text-align:right}
+.hr.dead{background:var(--badbg);border-radius:3px;padding:2.5px 5px;margin:0 -5px}
+.lg{display:flex;gap:16px;font-size:12px;color:var(--tx3);margin-bottom:9px}
+.lg s{text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+ul{margin:8px 0;padding-left:20px}li{margin-bottom:6px}
+.note{background:var(--acbg);border:1px solid var(--ac);border-radius:4px;padding:12px 14px;font-size:14.5px;margin:12px 0}
+.note.b{background:var(--badbg);border-color:var(--bad)}
+.note.g{background:var(--okbg);border-color:var(--ok)}
+.note.w{background:var(--wnbg);border-color:var(--wn)}
+.ft{text-align:center;font-size:12px;color:var(--tx3);padding-top:6px;line-height:2}
+code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--soft);padding:1.5px 5px;border-radius:3px;border:1px solid var(--line)}
+pre{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:12px;overflow-x:auto;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.7;margin:10px 0}
+@media(max-width:560px){.score .n{font-size:44px}h1{font-size:21px}.q{grid-template-columns:54px 1fr}}
+</style>
+</head><body><div class="wrap">
+<section class="card hero"><div class="heroTop"><div><h1>2026/10/23（五）社群復盤</h1>
+<p class="sub">五館實撈 <b class="mono">1277</b> 則 · 我方 <b class="mono">91.2%</b> · 真路人開口 <b class="mono">36</b> 人 · 30 分內回覆 <b>40%→52%</b> · 人工重算（bot 回 200 給 55 分，追私訊 2/3 是真路人）· ⚠️ 四館資料止於 21:07–21:21，只有猛健樂到 22:29</p></div>
+<div class="score"><div class="n mono">32</div><div class="d">/ 100</div></div></div>
+<div class="cap"><b>封頂：</b>Q1、Q3 沒過 → 最高 50。再扣分：①<b>R11／R18</b> 18:30 真路人「吐到吐胃酸 受不了直接掛急診」<b>0 回</b>；22:17 低血壓眼黑，我方列六點做法、沒叫回診 ②<b>R17</b> 14:59–19:49 我方單館 <b>0 則</b>，8 個真路人提問 ③<b>R12</b> 婷婷問「必瘦組？那什麼？」→ 下一則劇本「如何購買？」拿走入口 ④<b>R5</b> 五館罐頭「可以吃普拿疼」。加分：回覆率 52%、版主 1 分鐘答懷孕題（條件觸發寫對）、3 分鐘破解「二群」詐騙。</div></section>
+
+<section class="card alarm"><h2>一眼看完</h2><table>
+<tr><th>項目</th><th>結論</th></tr>
+<tr><td>昨天真正有人接話</td><td>①<b>20:07–20:38 快樂瘦3館</b>：真路人 D37（2.5 打九次、卡關）用自己的三餐帶新人，還接了停滯劇本的台詞，但 <b>0 個 @</b> ②<b>15:41–16:30 就瘦了2館</b>：我方 0 則，真路人 布丁🎩 自己答格數、氣泡，Yuuuu／咪咪 自己守群規 ③<b>21:29 猛健樂</b>：版主一分鐘答懷孕題；Livetalk 掉髮段接到真路人問定義，入口卻給了劇本</td></tr>
+<tr><td>🔴 最該改的判準</td><td class="bad-t"><b>R11（第 61 行）</b>補「該叫醫生沒叫＋急症 0 回」：真路人講嚴重症狀（吐到不能進食、掛急診、眼黑）30 分內 0 回＝fail；有回但沒回診句＝封頂 40。第 3 次送裁。現行字面只防「多叫」，不管「該叫沒叫」。</td></tr>
+<tr><td>今天的稿（10/24 掉髮 <code>1jc8mm</code>，比對「長見證版」分頁）</td><td><span class="ok-t">R11 沒踩：則05／07／21 三次回診句，則07「一直吐，就要回診」正好是昨天熏那種情況。</span><br><span class="bad-t">①則16–17、則22 兩次入口都給劇本（同 22:19 小桃酥）②則13 必瘦組還是服務式定義 ③昨晚 22:00 猛健樂 LT 已講過「蛋白質鋅鐵＋豆漿」，今天則05／08／20 同原理同食材 ④6 個分頁、狀態空白，發哪版先定</span></td></tr>
+<tr><td>安全</td><td>00:28 快樂瘦3館冒名「健康吃，快樂瘦小編⠀⠀⠀⠀」貼「群主帳號被封、大家進二群、沒進的默認機器人移除」→ 12:00 般若「二群在哪呀？」→ 12:03 芸婷「沒有二群 那是詐騙」。<b>只在 1 館破解，冒名訊息掛了 11.5 小時。</b></td></tr>
+</table></section>
+
+<section class="card"><h2>三題</h2>
+<div class="q"><div class="qk">Q1<span class="b">FAIL</span></div><div><div class="qt">真路人直接問，拿到的是服務式定義（第 7 天）</div><blockquote class="g">必瘦組？那什麼？<cite>22:18 @婷婷@（暫判真路人）· 猛健樂</cite></blockquote><blockquote class="b">必瘦組是里長夫人依照你現在的狀況／搭配的營養產品組合／也會一起調整吃法<cite>22:21 淑珍（我方）</cite></blockquote></div></div>
+<div class="q"><div class="qk">Q2<span class="b">選擇</span></div><div><div class="qt">代價寫在劇本裡；真的在付代價的真路人沒人接</div><blockquote class="">少吃沒用，升又不敢／那陣子每週回診打完看數字都好心累😢<cite>20:54 淑珍（我方）· 五館</cite></blockquote><blockquote class="g">我打第9次，都2.5....沒調升劑量，瘦9公斤，目前也是卡關<cite>20:20 D37（真路人）· 快樂瘦3館 —— 0 個 @</cite></blockquote></div></div>
+<div class="q"><div class="qk">Q3<span class="b">FAIL</span></div><div><div class="qt">素人實拍 5 : 官方 151</div><div class="qe">真路人的畫面是 20:38 愛吃雞蛋糕兩張體態照「大家覺得兩張體態有差嗎」（淑珍@ 單館回「大腿縫有明顯看到了」），跟必瘦組無關。</div></div></div>
+</section>
+
+<section class="card"><h2>硬數字（人工算）</h2><div class="grid">
+<div class="tile"><div class="l">五館總則數</div><div class="v">1277</div><div class="s">猛333／2館279／快3 254／4館209／快2 202・另排除冒名引流 3 則</div></div>
+<div class="tile bad"><div class="l">我方 : 真路人</div><div class="v">91.2%</div><div class="s">1165 : 112・我方文字 780/857 跨館同句</div></div>
+<div class="tile bad"><div class="l">真路人開口</div><div class="v">36 人</div><div class="s">2館17／快3 10／猛5／4館4／<b>快2 1</b>（10/22 52 人）</div></div>
+<div class="tile bad"><div class="l">素人實拍 : 官方圖</div><div class="v">5 : 151</div></div>
+<div class="tile"><div class="l">資訊型 : 價格型</div><div class="v">22 : 3</div></div>
+<div class="tile ok"><div class="l">30 分內我方接</div><div class="v">52%</div><div class="s">13 / 25（10/22 40%）・路人自己接 4・沒人接 8</div></div>
+<div class="tile bad"><div class="l">入口 真路人 : 我方</div><div class="v">1 : 3</div><div class="s">只有 14:58 @YUU</div></div>
+<div class="tile bad"><div class="l">我方單館 0 則</div><div class="v">4h50m</div><div class="s">14:59–19:49・8 個真路人提問</div></div>
+</div>
+<h3>每小時 我方／真路人（五館合計）</h3><div class="lg"><s><i class="sw bi"></i>我方</s><s><i class="sw bo"></i>真路人</s><s>紅底＝我方 0 則</s></div><div class="hr dead"><span class="h">00</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:0.3%"></i></div><span class="c">0 / 1</span></div><div class="hr"><span class="h">08</span><div class="bar"><i class="bi" style="width:44.4%"></i><i class="bo" style="width:0.3%"></i></div><span class="c">150 / 1</span></div><div class="hr"><span class="h">09</span><div class="bar"><i class="bi" style="width:25.1%"></i><i class="bo" style="width:0.3%"></i></div><span class="c">85 / 1</span></div><div class="hr"><span class="h">10</span><div class="bar"><i class="bi" style="width:19.2%"></i><i class="bo" style="width:0.0%"></i></div><span class="c">65 / 0</span></div><div class="hr"><span class="h">11</span><div class="bar"><i class="bi" style="width:12.7%"></i><i class="bo" style="width:0.6%"></i></div><span class="c">43 / 2</span></div><div class="hr"><span class="h">12</span><div class="bar"><i class="bi" style="width:46.4%"></i><i class="bo" style="width:3.6%"></i></div><span class="c">157 / 12</span></div><div class="hr"><span class="h">13</span><div class="bar"><i class="bi" style="width:10.7%"></i><i class="bo" style="width:0.0%"></i></div><span class="c">36 / 0</span></div><div class="hr"><span class="h">14</span><div class="bar"><i class="bi" style="width:0.9%"></i><i class="bo" style="width:0.3%"></i></div><span class="c">3 / 1</span></div><div class="hr dead"><span class="h">15</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:2.4%"></i></div><span class="c">0 / 8</span></div><div class="hr"><span class="h">16</span><div class="bar"><i class="bi" style="width:3.0%"></i><i class="bo" style="width:5.0%"></i></div><span class="c">10 / 17</span></div><div class="hr dead"><span class="h">17</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:3.0%"></i></div><span class="c">0 / 10</span></div><div class="hr"><span class="h">18</span><div class="bar"><i class="bi" style="width:19.2%"></i><i class="bo" style="width:1.5%"></i></div><span class="c">65 / 5</span></div><div class="hr"><span class="h">19</span><div class="bar"><i class="bi" style="width:13.6%"></i><i class="bo" style="width:3.0%"></i></div><span class="c">46 / 10</span></div><div class="hr"><span class="h">20</span><div class="bar"><i class="bi" style="width:90.5%"></i><i class="bo" style="width:9.5%"></i></div><span class="c">306 / 32</span></div><div class="hr"><span class="h">21</span><div class="bar"><i class="bi" style="width:34.9%"></i><i class="bo" style="width:0.6%"></i></div><span class="c">118 / 2</span></div><div class="hr"><span class="h">22</span><div class="bar"><i class="bi" style="width:24.0%"></i><i class="bo" style="width:3.0%"></i></div><span class="c">81 / 10</span></div>
+<p class="sub">15:00 與 17:00 我方 0 則；16:00 的 10 則是五館劇本「打猛之後是不是對油炸會免疫」，不是回覆。</p>
+</section>
+
+<section class="card"><h2>一、昨天真正有人接話的是哪一段</h2>
+<h3>1. 20:07–20:38 快樂瘦3館：真路人 D37 帶新人，還接了停滯劇本</h3>
+<blockquote class="g">我想甩掉 35 公斤／我最想瘦 全身 ／ 鶯歌有點小鄉下地方～～還在找可以施打猛健樂的診所<cite>19:08–19:09 搞什麼按到退群（真路人，新人）</cite></blockquote>
+<blockquote class="g">我打第9次，都2.5....沒調升劑量，瘦9公斤，目前也是卡關 ／ 水每天喝3000，現在也是卡關..想要調升劑量<cite>20:20–20:21 D37（真路人）</cite></blockquote>
+<blockquote class="g">早餐7-11~2顆黃金滷蛋…+1個30元地瓜+1杯豆漿 ／ 護士每次都會提醒我說..妳不要體重沒瘦荷包先瘦了<cite>20:29–20:35 D37 回新人「可以請問您3餐怎麼吃嗎」</cite></blockquote>
+<blockquote class="">那不升的話，是不是再少吃一點就會動了？ → 對，我以前也是這樣想，後來發現不是這樣／身體會出現一種機制保護<cite>20:36 阿華姐（我方劇本，五館）→ 20:37–20:38 D37（真路人）接話</cite></blockquote>
+<p>一個真的卡關的人，用自己的三餐和診所經驗回答新人，講得比劇本具體，還幫劇本把「少吃反而鎖住」講完。<b>但</b> D37 就是這本停滯稿要找的人，整段 0 個 @、0 個入口。</p>
+<h3>2. 15:41–16:30 就瘦了2館：我方 0 則，真路人自己互教、自己守群規</h3>
+<blockquote class="g">請問這個群可以詢問購買猛建樂嗎 → @依 這裡不行喔... → 猛健樂是藥品 大家還是找合法的診所買比較好喔<cite>15:41–15:49 依・Yuuuu・咪咪（真路人）</cite></blockquote>
+<blockquote class="g">請問45格大約是幾ml → 7.5mg（附換算表）→ 剛開始打應該會建議轉15格（2.5mg)記得諮詢一下醫生<cite>16:01–16:28 Wawa Chien × 布丁🎩（真路人）</cite></blockquote>
+<blockquote class="g">全新未使用的看起來裡面有小氣泡是正常的嗎🥲 → 會喔，排空後會消失，這也是排空的目的之一<cite>16:17–16:30 林林林 × 布丁🎩（真路人）</cite></blockquote>
+<p>R17 的反面：我方不在，路人把群規和劑量常識講對了。代價是同一個 4 小時 50 分，熏的急診題沒人接。</p>
+<h3>3. 21:29–22:28 猛健樂：懷孕題寫對；掉髮 LT 的入口給了劇本</h3>
+<blockquote class="g">如果明年想拚二寶是不是要先停打？要停多久？<cite>21:29 婷婷（暫判真路人）</cite></blockquote>
+<blockquote class="">歐洲仿單是寫計畫懷孕／至少提早1個月停／針劑的規劃可以跟醫生討論喔<cite>21:30 版主（我方）—— R11 條件觸發的正面樣本</cite></blockquote>
+<blockquote class="b">必瘦組？那什麼？ → 如何購買？ → @小桃酥 請私訊版版<cite>22:18 婷婷 → 22:19 小桃酥（我方）→ 22:22 瘦到嫑嫑編</cite></blockquote>
+</section>
+
+<section class="card"><h2>二、要回頭改的判準（🔒 只標不改）</h2>
+<div class="rl"><div class="rlh"><span class="code">R11</span><span class="rlt">第 61 行補「該叫醫生沒叫＋急症 0 回」：嚴重症狀 30 分內 0 回＝fail；有回沒回診句＝封頂 40（第 3 次送裁）</span></div><div class="rlc">
+<blockquote class="b">想問有人打日本瘦瘦針跟我一樣一直狂吐的嗎／只要喝水吃東西進去就吐光／我吐到吐胃酸 受不了直接掛急診<cite>18:30 熏（真路人）· 快樂瘦3館 —— 到 21:10 資料截止 0 回；同館芸婷🐰 20:13–20:23 回了另外三個人</cite></blockquote>
+<blockquote class="b">🌟你的判斷是對的／這確實跟瘦太快有關…先從以下幾件事著手…眼前發黑的當下／先蹲下或扶著東西<cite>22:17 鳳姐（我方）回 Liu雅萱 低血壓眼黑 —— 0 句回診</cite></blockquote>
+<p>現行「『去看醫生』是條件觸發不是反射動作」只防多叫。bot 自己的追私訊都寫了「這條不能拖」，紅線卻把 R11 warn 打在<b>寫對</b>的懷孕題上。</p>
+</div></div>
+<div class="rl"><div class="rlh"><span class="code">R17</span><span class="rlt">值班窗口（9/6 提，未入檔）：真路人 ≥5 題的時段我方單館 0 則＝封頂 60</span></div><div class="rlc"><p>14:59–19:49 我方單館 0 則；這段 8 題：依、Wawa Chien、林林林、May168「台中哪裡比較便宜」、Ruby～、Tt「美版3.5mg可以直接跳到日版5mg嗎」、熏（急診）、愛吃雞蛋糕「停滯兩個禮拜」。</p></div></div>
+<div class="rl"><div class="rlh"><span class="code">R12</span><span class="rlt">入口條第 3 天：真路人問定義／自報卡關，該串結束前沒被 @＝fail；入口給我方＝封頂 30</span></div><div class="rlc"><p>22:18 婷婷「必瘦組？那什麼？」→ 入口 @小桃酥；20:20 D37 卡關 0 個 @。全天入口 真路人 1：我方 3。</p></div></div>
+<div class="rl"><div class="rlh"><span class="code">R5</span><span class="rlt">第 52 行主詞「素人」→「我方所有帳號（含罐頭）」（第 11 天）</span></div><div class="rlc"><blockquote class="b">可能會頭暈頭痛，可以吃普拿疼／還有比較多人會便秘，平常要多喝水<cite>19:44 芸婷（我方）· 五館 —— 不在任何 Doc 裡的罐頭</cite></blockquote></div></div>
+<div class="rl"><div class="rlh"><span class="code">待確認</span><span class="rlt">「高敏敏營養師少數認證社群」的授權與書面（10/19、10/20 也標過）</span></div><div class="rlc"><blockquote class="">高敏敏營養師少數認證社群 ／ 里長夫人瘦下來有被敏敏營養師採訪和被推薦 ／ 常看到他們會一起出國出遊<cite>11:59–12:01 芸婷（我方）· 五館</cite></blockquote></div></div>
+</section>
+
+<section class="card"><h2>三、今天的稿：10/24 掉髮（Doc 1jc8mm，「v2測試｜主對話｜長見證版」分頁）</h2>
+<p class="sub">10/23 實發的是同類分頁「v2測試｜主對話｜長見證版」（Doc 對得上 109 句），今天照同一型比對。Doc 6 個分頁、標題「含待校正情節」「嘉原尚未給建議」、總表第 170 列狀態空白。</p>
+<table><tr><th>昨天的坑</th><th>今天的稿</th><th>判定</th></tr>
+<tr><td>R11 該叫醫生沒叫</td><td>則05「吃夠了還是一直沒變少／就要給醫師看喔」、則07「反胃到什麼都吃不下、一直吐，就要回診喔」、則21</td><td class="ok-t">✅ 沒踩</td></tr>
+<tr><td>R12 入口給劇本</td><td><b>則16 群友B「怎麼私訊里長夫人？」→ 則17 連結；則22 群友C → 連結</b></td><td class="bad-t">🔴 同坑</td></tr>
+<tr><td>Q1 服務式定義</td><td>則12「必瘦組不就是蛋白質嗎？」→ 則13「里長夫人是先問我什麼時候最反胃…再挑我吞得下去的搭」</td><td class="bad-t">🔴 同坑</td></tr>
+<tr><td>主題撞期</td><td>10/23 22:00 猛健樂 LT 已講「掉髮不是因為打猛／蛋白質鋅鐵缺乏／喝豆漿」；今天則05「頭髮是靠蛋白質、鐵、鋅」、則08「冰的無糖豆漿」、則20「身體長期缺營養」</td><td>🟡 換角度或換館</td></tr>
+<tr><td>R5 劑量／成藥</td><td>0 處；則10「針照醫生說的繼續打」</td><td class="ok-t">✅</td></tr>
+<tr><td>R1 加速器</td><td>則10「沒想到體重還能繼續往下」</td><td>🟡 輕度</td></tr>
+<tr><td>定版</td><td>6 個分頁；稿後自寫總表主題A與 Doc 不一致</td><td class="bad-t">🔴 發哪版先定</td></tr>
+</table></section>
+
+<section class="card"><h2>bot 第 58 天</h2><ul>
+<li>200，給 55：Q1 判 pass（證據是「請私訊里長夫人」＋我方服務式定義），照封頂應 ≤50。</li>
+<li>引文 26/37 對得上；對不上的是收回訊息、截止後訊息、疑似 bot 自發文，<b>沒發現捏造</b>。</li>
+<li>〈追私訊〉熏、愛吃雞蛋糕是真路人，奶油酥是我方（2/3，近兩週最好）。把 Tt（真路人）和巧恩（我方）兩人的話接成一句。</li>
+<li>冒名「二群」詐騙沒提。</li></ul></section>
+<div class="ft">資料：/sq-history 五館循序實撈（chat_mid 已核）・自己人＝七條聯集＋⑥沿用＋人工改回 Wawa Chien；排除冒名 健康吃快樂瘦小編⠀／Lisa小 編；婷婷／Betty Lin 暫判路人（待確認）・逐字稿 ~/scratchpad/rp1023/tr.txt・逐條證據 ~/社群腳本總監/復盤_20261023.md</div>
+</div></body></html>
