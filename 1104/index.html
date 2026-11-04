@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026/11/4 社群復盤｜未評分（資料源斷線）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#F2F4F6;--card:#fff;--line:#DCE3EA;--soft:#F7F9FB;--tx:#10171F;--tx2:#4C5A69;--tx3:#7C8B9B;
+--ac:#12557E;--acbg:#E4EEF5;--ok:#0A6E4C;--okbg:#E2F2EA;--wn:#8F6206;--wnbg:#FAEFD8;--bad:#A92A21;--badbg:#FAE6E4;
+--sh:0 1px 2px rgba(16,23,31,.06),0 10px 28px -16px rgba(16,23,31,.25)}
+@media(prefers-color-scheme:dark){:root{--bg:#0C1116;--card:#141A21;--line:#28323C;--soft:#1A222A;--tx:#E9EEF3;--tx2:#A3B0BD;--tx3:#75838F;
+--ac:#66A9D6;--acbg:#162836;--ok:#4CC08D;--okbg:#10281F;--wn:#DDA843;--wnbg:#2A2315;--bad:#EC7A70;--badbg:#2C1A19;
+--sh:0 1px 2px rgba(0,0,0,.5),0 12px 32px -18px rgba(0,0,0,.8)}}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans TC","PingFang TC",system-ui,sans-serif;font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:900px;margin:0 auto;padding:26px 16px 90px;display:flex;flex-direction:column;gap:26px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 20px;box-shadow:var(--sh)}
+h1{font-size:25px;font-weight:900;margin:0 0 6px;letter-spacing:-.01em;line-height:1.35}
+h2{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--tx3);margin:0 0 16px;display:flex;align-items:center;gap:10px;font-family:"IBM Plex Mono",monospace}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font-size:17px;font-weight:700;margin:26px 0 10px;line-height:1.5}
+h3:first-of-type{margin-top:4px}
+p{margin:0 0 12px}
+.sub{color:var(--tx2);font-size:14.5px;margin:0}
+/* 抬頭 */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--bad)}
+.heroTop{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+.score{text-align:right;flex:none}
+.score .n{font-size:58px;font-weight:900;line-height:.95;color:var(--bad);font-family:"IBM Plex Mono",monospace}
+.score .d{font-size:12px;color:var(--tx3);letter-spacing:.1em}
+.cap{margin-top:14px;background:var(--badbg);border:1px solid var(--bad);border-radius:4px;padding:10px 13px;font-size:14px;color:var(--tx);font-weight:500}
+/* 警示 */
+.alarm{border:2px solid var(--bad);background:var(--badbg)}
+.alarm h2{color:var(--bad)}.alarm h2::after{background:var(--bad);opacity:.35}
+/* 三題 */
+.q{display:grid;grid-template-columns:62px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0;padding-top:2px}
+.qk{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:17px;color:var(--tx3)}
+.qk .b{display:block;margin-top:5px;font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:2.5px 0;text-align:center;border-radius:3px;background:var(--badbg);color:var(--bad);border:1px solid var(--bad)}
+.qk .b.p{background:var(--okbg);color:var(--ok);border-color:var(--ok)}
+.qt{font-weight:700;margin-bottom:5px}
+.qe{font-size:14.5px;color:var(--tx2)}
+/* 數字 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px}
+.tile{background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:13px 14px}
+.tile .l{font-size:11.5px;color:var(--tx3);letter-spacing:.05em;margin-bottom:5px}
+.tile .v{font-size:26px;font-weight:900;font-family:"IBM Plex Mono",monospace;line-height:1.1}
+.tile .s{font-size:12px;color:var(--tx3);margin-top:3px}
+.tile.bad .v{color:var(--bad)}.tile.ok .v{color:var(--ok)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:10px 0 4px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;color:var(--tx3);font-weight:700;background:var(--soft)}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.bad-t{color:var(--bad);font-weight:700}.ok-t{color:var(--ok);font-weight:700}
+/* 引句 */
+blockquote{margin:9px 0;padding:10px 14px;background:var(--soft);border-left:3px solid var(--ac);border-radius:0 4px 4px 0;font-size:14.5px;color:var(--tx);white-space:pre-line}
+blockquote.b{border-left-color:var(--bad)}
+blockquote.g{border-left-color:var(--ok)}
+cite{display:block;font-style:normal;font-size:12px;color:var(--tx3);margin-top:6px;font-family:"IBM Plex Mono",monospace}
+/* 紅線 */
+.rl{border:1px solid var(--line);border-radius:5px;margin-bottom:13px;overflow:hidden}
+.rlh{display:flex;align-items:center;gap:10px;padding:10px 13px;background:var(--soft);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.code{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:13px;padding:2px 8px;border-radius:3px;background:var(--badbg);color:var(--bad);border:1px solid var(--bad)}
+.code.w{background:var(--wnbg);color:var(--wn);border-color:var(--wn)}
+.code.g{background:var(--okbg);color:var(--ok);border-color:var(--ok)}
+.rlt{font-weight:700;font-size:15px}
+.rlc{padding:13px}
+.src{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--tx3)}
+/* 值班條 */
+.hr{display:grid;grid-template-columns:38px 1fr 76px;gap:9px;align-items:center;font-size:13px;padding:2.5px 0}
+.hr .h{font-family:"IBM Plex Mono",monospace;color:var(--tx3);font-size:12px}
+.bar{display:flex;height:15px;border-radius:2px;overflow:hidden;background:var(--soft)}
+.bar i{display:block;height:100%}
+.bi{background:var(--ac)}.bo{background:var(--bad)}
+.hr .c{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--tx3);text-align:right}
+.hr.dead{background:var(--badbg);border-radius:3px;padding:2.5px 5px;margin:0 -5px}
+.lg{display:flex;gap:16px;font-size:12px;color:var(--tx3);margin-bottom:9px}
+.lg s{text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+ul{margin:8px 0;padding-left:20px}li{margin-bottom:6px}
+.note{background:var(--acbg);border:1px solid var(--ac);border-radius:4px;padding:12px 14px;font-size:14.5px;margin:12px 0}
+.note.b{background:var(--badbg);border-color:var(--bad)}
+.note.g{background:var(--okbg);border-color:var(--ok)}
+.note.w{background:var(--wnbg);border-color:var(--wn)}
+.ft{text-align:center;font-size:12px;color:var(--tx3);padding-top:6px;line-height:2}
+code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--soft);padding:1.5px 5px;border-radius:3px;border:1px solid var(--line)}
+pre{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:12px;overflow-x:auto;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.7;margin:10px 0}
+@media(max-width:560px){.score .n{font-size:44px}h1{font-size:21px}.q{grid-template-columns:54px 1fr}}
+</style></head><body><div class="wrap">
+<section class="card hero"><div class="heroTop"><div><h1>2026/11/4（三）社群復盤</h1>
+<p class="sub">⚠️ <b>未評分</b>：Zeabur 復盤 bot 與五館 REST 從 11/5 07:00 起整批連線逾時（同機 customerassiant、ipvideoscript 也不通；zeabur.com 本站正常）。<b>沒有 11/4 的訊息，不補編分數。</b></p></div>
+<div class="score"><div class="n mono">—</div><div class="d">未評分</div></div></div></section>
+<section class="card alarm"><h2>一眼看完</h2><table>
+<tr><th>項目</th><th>結論</th></tr>
+<tr><td>昨天真正有人接話</td><td>無法回答（拿不到 11/4 資料）</td></tr>
+<tr><td>🔴 最該改的判準</td><td class="bad-t">沿用 11/3：<b>新增 R13 處方藥價格／代購</b>（criteria_prompt.py 紅線只到 R11）——真路人公開價格／診所／代購 15 分內我方 0 單館提醒＝fail，起火點是我方劇本＝封頂 30</td></tr>
+<tr><td>今天的稿</td><td>11/5 停滯 <code>11j7Th2</code>：<span class="bad-t">①則19 星洛「女兒畢業典禮」＝10/16 Claude 補寫的候選情節，掛在真鐵粉身上 ②則19「醫生說不用再升劑量，反而省錢」R5 ③則23 敏敏營養師背書無出處 ④則23 服務式定義 ⑤入口全給劇本</span>；✅ 沒有搬真路人原句（對 11/3 實撈 0 命中）</td></tr>
+<tr><td>要誰做什麼</td><td>操盤手進 Zeabur 後台看是欠費停服還是故障，或決定提前切 Mini；恢復後重跑這格覆蓋本列</td></tr>
+</table></section>
+<section class="card"><h2>今天 11/5 停滯期稿逐則</h2><table><tr><th>則</th><th>原句</th><th>坑</th></tr><tr class="bad"><td>🔴19 星洛</td><td><q class="fail">我會開始瘦身是因為女兒畢業典禮被拉去合照</q></td><td>真人鐵粉掛上編的情節：10/16 那本備註「鐵粉女兒畢業典禮…Claude 10/16 補寫…全為候選情節，請確認或換成實際事件」</td></tr><tr class="bad"><td>🔴19 星洛</td><td><q class="fail">後來醫生看我穩定在掉，說不用再升劑量，反而省錢</q></td><td>R5＋R1：10/30「搭必瘦組就不用升劑量」同骨架；11/1 第 3 天。則25 鳳姐「劑量…醫師決定」✅但則19 已先播結論</td></tr><tr class=""><td>23 星洛</td><td><q class="fail">我只能說里長夫人不愧是敏敏營養師推薦</q></td><td>第三方背書要附出處（10/16 那本預設不放；10/28 R5「必瘦組裡面有高敏敏的東西」）</td></tr><tr class=""><td>23 鳳姐</td><td><q class="fail">必瘦組是里長夫人會先看卡住你的原因是什麼…再加上產品組合去彌補這些缺口</q></td><td>服務式定義、沒說是食品（10/31 寫對過，11/3、11/4 又回去）</td></tr><tr class=""><td>27、35</td><td><q class="fail">入口兩次都給 群友B／群友D</q></td><td>R12 入口全給劇本（10/28 起每天點名）</td></tr><tr class=""><td>19、30</td><td><q class="fail">半年多總共瘦了20公斤／總共也瘦了16公斤</q></td><td>R1 效果數字</td></tr><tr class=""><td>開場 里長夫人</td><td><q class="fail">減脂的其中一個原料也是水／水腫反而是水喝太少！</q></td><td>生理期水腫主因是荷爾蒙；建議改「生理期前水分滯留是荷爾蒙，照常喝水就好」</td></tr><tr class=""><td>28 群友B</td><td><q class="fail">不然可能都可以買好幾組必瘦組了</q></td><td>拿針錢比價（11/3 R13 起火點也是我方價格話題）</td></tr><tr class=""><td>Doc</td><td><q class="fail">===階段性截止線（待改）===</q></td><td>Doc 有【待改】、總表狀態欄空白</td></tr></table>
+<p class="sub">✅ 寫對：則25「劑量要不要調是醫師看你的狀況決定」；則12 蛋白質 0.8–1.2 倍體重克數。</p></section>
+<div class="ft">資料：11/5 07:00–07:20 重試 /report 與 /sq-history 皆 000・稿件 Doc 11j7Th2of5D5tpnKrrMZQJHhdd3TZ4OUNv0qCYP75f3I・逐條證據 ~/社群腳本總監/復盤_20261104.md</div>
+</div></body></html>
