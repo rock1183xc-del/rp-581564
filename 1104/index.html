@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>2026/11/4 社群復盤｜未評分（資料源斷線）</title>
+<title>2026/11/4 社群復盤｜26 分</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -87,18 +87,89 @@ ul{margin:8px 0;padding-left:20px}li{margin-bottom:6px}
 code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--soft);padding:1.5px 5px;border-radius:3px;border:1px solid var(--line)}
 pre{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:12px;overflow-x:auto;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.7;margin:10px 0}
 @media(max-width:560px){.score .n{font-size:44px}h1{font-size:21px}.q{grid-template-columns:54px 1fr}}
-</style></head><body><div class="wrap">
+</style>
+</head><body><div class="wrap">
 <section class="card hero"><div class="heroTop"><div><h1>2026/11/4（三）社群復盤</h1>
-<p class="sub">⚠️ <b>未評分</b>：Zeabur 復盤 bot 與五館 REST 從 11/5 07:00 起整批連線逾時（同機 customerassiant、ipvideoscript 也不通；zeabur.com 本站正常）。<b>沒有 11/4 的訊息，不補編分數。</b></p></div>
-<div class="score"><div class="n mono">—</div><div class="d">未評分</div></div></div></section>
+<p class="sub">五館實撈 <b class="mono">1559</b> 則（hours=60，REST 止於 21:35–23:59）· 我方 <b class="mono">90.2%</b> · 真路人開口 <b class="mono">52</b> 人 · 30 分內我方接 <b>50%→33%</b> · 入口給真路人 <b class="mono">0</b> · 人工判（bot 沒產 11/4）· 11/5 18:40 Zeabur 恢復後重跑，覆蓋早上的未評分件</p></div>
+<div class="score"><div class="n mono">26</div><div class="d">/ 100</div></div></div>
+<div class="cap"><b>封頂：</b>Q1 沒過 → 最高 50。再扣：①<b>R13</b> 比價／去日本帶，兩波都是<b>我方劇本先講</b>（09:16、19:13）②<b>R1</b> 劇本答「一定會呀」③<b>R18</b> 劇本教「買10打5省錢」④<b>R17</b> 13:07–16:28 0 針對回應（連 13 天）。</div></section>
+
 <section class="card alarm"><h2>一眼看完</h2><table>
 <tr><th>項目</th><th>結論</th></tr>
-<tr><td>昨天真正有人接話</td><td>無法回答（拿不到 11/4 資料）</td></tr>
-<tr><td>🔴 最該改的判準</td><td class="bad-t">沿用 11/3：<b>新增 R13 處方藥價格／代購</b>（criteria_prompt.py 紅線只到 R11）——真路人公開價格／診所／代購 15 分內我方 0 單館提醒＝fail，起火點是我方劇本＝封頂 30</td></tr>
-<tr><td>今天的稿</td><td>11/5 停滯 <code>11j7Th2</code>：<span class="bad-t">①則19 星洛「女兒畢業典禮」＝10/16 Claude 補寫的候選情節，掛在真鐵粉身上 ②則19「醫生說不用再升劑量，反而省錢」R5 ③則23 敏敏營養師背書無出處 ④則23 服務式定義 ⑤入口全給劇本</span>；✅ 沒有搬真路人原句（對 11/3 實撈 0 命中）</td></tr>
-<tr><td>要誰做什麼</td><td>操盤手進 Zeabur 後台看是欠費停服還是故障，或決定提前切 Mini；恢復後重跑這格覆蓋本列</td></tr>
+<tr><td>昨天真正有人接話</td><td><b>零門檻實務題</b>：16:43 E 問 3.3 分兩邊打／生理期要不要停針 → 3 個真路人 9 分鐘答完；16:33–17:48 快樂瘦3館「打猛能不能喝酒」3 人 20 則。<b>兩段我方都是 0。</b></td></tr>
+<tr><td>🔴 最該改的判準</td><td class="bad-t"><b>R13 處方藥價格／代購</b>（第 2 天、仍未入檔）要多一句：<b>我方劇本自己帶「漲價／比較省／CP值／去日本買」＝直接 fail</b>。11/4 兩波都是劇本起頭，19:10 群規才貼「禁止公開處方藥價格／代購」</td></tr>
+<tr><td>第二條</td><td class="bad-t"><b>R12 舉手不接</b>：Rou 14:36「買的時候都是一次付清嗎！還是有分期」整天 0 回；三波入口全給劇本帳號</td></tr>
+<tr><td>今天 11/5 的稿</td><td>停滯 <code>11j7Th2</code>：<span class="bad-t">則23 服務式定義（＝11/4 21:11 回真路人 緁）、則19「不用再升劑量，<b>反而省錢</b>」、則28「都可以買好幾組必瘦組了」比價、入口全給劇本、則19 女兒畢業典禮＝候選情節</span>；✅ 則25「劑量要不要調是醫師…決定」保留</td></tr>
+<tr><td>11/4 稿</td><td class="bad-t">早上點名的全部原樣播出：20:03 針頭題（＝真路人 QianQian 原話）五館都播、含她在的就瘦了2館</td></tr>
+<tr><td>bot</td><td>11/4 沒產（404、export 只到 11/3），Zeabur 斷線期間排程沒補跑</td></tr>
 </table></section>
-<section class="card"><h2>今天 11/5 停滯期稿逐則</h2><table><tr><th>則</th><th>原句</th><th>坑</th></tr><tr class="bad"><td>🔴19 星洛</td><td><q class="fail">我會開始瘦身是因為女兒畢業典禮被拉去合照</q></td><td>真人鐵粉掛上編的情節：10/16 那本備註「鐵粉女兒畢業典禮…Claude 10/16 補寫…全為候選情節，請確認或換成實際事件」</td></tr><tr class="bad"><td>🔴19 星洛</td><td><q class="fail">後來醫生看我穩定在掉，說不用再升劑量，反而省錢</q></td><td>R5＋R1：10/30「搭必瘦組就不用升劑量」同骨架；11/1 第 3 天。則25 鳳姐「劑量…醫師決定」✅但則19 已先播結論</td></tr><tr class=""><td>23 星洛</td><td><q class="fail">我只能說里長夫人不愧是敏敏營養師推薦</q></td><td>第三方背書要附出處（10/16 那本預設不放；10/28 R5「必瘦組裡面有高敏敏的東西」）</td></tr><tr class=""><td>23 鳳姐</td><td><q class="fail">必瘦組是里長夫人會先看卡住你的原因是什麼…再加上產品組合去彌補這些缺口</q></td><td>服務式定義、沒說是食品（10/31 寫對過，11/3、11/4 又回去）</td></tr><tr class=""><td>27、35</td><td><q class="fail">入口兩次都給 群友B／群友D</q></td><td>R12 入口全給劇本（10/28 起每天點名）</td></tr><tr class=""><td>19、30</td><td><q class="fail">半年多總共瘦了20公斤／總共也瘦了16公斤</q></td><td>R1 效果數字</td></tr><tr class=""><td>開場 里長夫人</td><td><q class="fail">減脂的其中一個原料也是水／水腫反而是水喝太少！</q></td><td>生理期水腫主因是荷爾蒙；建議改「生理期前水分滯留是荷爾蒙，照常喝水就好」</td></tr><tr class=""><td>28 群友B</td><td><q class="fail">不然可能都可以買好幾組必瘦組了</q></td><td>拿針錢比價（11/3 R13 起火點也是我方價格話題）</td></tr><tr class=""><td>Doc</td><td><q class="fail">===階段性截止線（待改）===</q></td><td>Doc 有【待改】、總表狀態欄空白</td></tr></table>
-<p class="sub">✅ 寫對：則25「劑量要不要調是醫師看你的狀況決定」；則12 蛋白質 0.8–1.2 倍體重克數。</p></section>
-<div class="ft">資料：11/5 07:00–07:20 重試 /report 與 /sq-history 皆 000・稿件 Doc 11j7Th2of5D5tpnKrrMZQJHhdd3TZ4OUNv0qCYP75f3I・逐條證據 ~/社群腳本總監/復盤_20261104.md</div>
+
+<section class="card"><h2>三題</h2>
+<div class="q"><div class="qk">Q1<span class="b">FAIL</span></div><div><div class="qt">真路人問定義拿到服務式答案</div><blockquote class="g">新進群 想問什麼是必瘦組<cite>21:09 緁（真路人）· 快樂瘦3館</cite></blockquote><blockquote class="b">必瘦組是里長夫人會看過我的狀況才給建議／每一個階段卡關的點都不一樣<cite>21:11 安妮🎀（我方單館）—— 沒說是食品、裡面是什麼</cite></blockquote></div></div>
+<div class="q"><div class="qk">Q2<span class="b">FAIL</span></div><div><div class="qt">真路人自己講出顧慮，我方 0 回</div><blockquote class="">女生62公斤159公分…也可以打嗎？…感覺才62公斤會被勸退…..<cite>11:22 우미（真路人）· 就瘦了2館 —— 09:32–13:37 發 6 題，我方只回一句「台灣」</cite></blockquote></div></div>
+<div class="q"><div class="qk">Q3<span class="b">FAIL</span></div><div><div class="qt">素人實拍 8 : 官方 204</div></div></div>
+</section>
+
+<section class="card"><h2>硬數字（人工）</h2><div class="grid">
+<div class="tile"><div class="l">五館總則數</div><div class="v">1559</div><div class="s">2館449／猛348／快3 283／4館252／快2 227</div></div>
+<div class="tile bad"><div class="l">我方 : 真路人</div><div class="v">90.2%</div><div class="s">1406 : 153・我方文字 988/1051 跨館同句</div></div>
+<div class="tile"><div class="l">真路人開口</div><div class="v">52 人</div><div class="s">2館29／快3 9／4館9／猛5／<b>快2 0</b>（連 8 天）</div></div>
+<div class="tile"><div class="l">真路人問必瘦組</div><div class="v">3</div><div class="s">緁 定義、Rou 只吃必瘦組、希希希</div></div>
+<div class="tile bad"><div class="l">素人實拍 : 官方圖</div><div class="v">8 : 204</div></div>
+<div class="tile"><div class="l">資訊 : 價格 : 通路</div><div class="v">21 : 3 : 5</div><div class="s">價格＝檸檬羽、Mia、Rou 分期</div></div>
+<div class="tile bad"><div class="l">30 分內我方接</div><div class="v">33%</div><div class="s">白天 8 / 24 串（11/3 50%）</div></div>
+<div class="tile bad"><div class="l">入口 真路人 : 劇本</div><div class="v">0 : 3 波</div><div class="s">林姿穎／Huang筱君／Megan Hsieh</div></div>
+</div>
+<h3>每小時 我方／真路人（五館合計）</h3><div class="lg"><s><i class="sw bi"></i>我方</s><s><i class="sw bo"></i>真路人</s><s>紅底＝我方 0 則</s></div><div class="hr dead"><span class="h">00</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:0.7%"></i></div><span class="c">0 / 3</span></div><div class="hr dead"><span class="h">02</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:1.5%"></i></div><span class="c">0 / 6</span></div><div class="hr dead"><span class="h">06</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:0.5%"></i></div><span class="c">0 / 2</span></div><div class="hr dead"><span class="h">07</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:1.0%"></i></div><span class="c">0 / 4</span></div><div class="hr dead"><span class="h">08</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:0.5%"></i></div><span class="c">0 / 2</span></div><div class="hr"><span class="h">09</span><div class="bar"><i class="bi" style="width:33.8%"></i><i class="bo" style="width:2.7%"></i></div><span class="c">138 / 11</span></div><div class="hr dead"><span class="h">10</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:1.2%"></i></div><span class="c">0 / 5</span></div><div class="hr"><span class="h">11</span><div class="bar"><i class="bi" style="width:33.8%"></i><i class="bo" style="width:3.2%"></i></div><span class="c">138 / 13</span></div><div class="hr"><span class="h">12</span><div class="bar"><i class="bi" style="width:47.5%"></i><i class="bo" style="width:0.2%"></i></div><span class="c">194 / 1</span></div><div class="hr"><span class="h">13</span><div class="bar"><i class="bi" style="width:16.7%"></i><i class="bo" style="width:0.5%"></i></div><span class="c">68 / 2</span></div><div class="hr dead"><span class="h">14</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:1.0%"></i></div><span class="c">0 / 4</span></div><div class="hr"><span class="h">16</span><div class="bar"><i class="bi" style="width:6.4%"></i><i class="bo" style="width:6.4%"></i></div><span class="c">26 / 26</span></div><div class="hr"><span class="h">17</span><div class="bar"><i class="bi" style="width:8.1%"></i><i class="bo" style="width:3.4%"></i></div><span class="c">33 / 14</span></div><div class="hr"><span class="h">18</span><div class="bar"><i class="bi" style="width:23.8%"></i><i class="bo" style="width:0.0%"></i></div><span class="c">97 / 0</span></div><div class="hr"><span class="h">19</span><div class="bar"><i class="bi" style="width:10.0%"></i><i class="bo" style="width:2.7%"></i></div><span class="c">41 / 11</span></div><div class="hr"><span class="h">20</span><div class="bar"><i class="bi" style="width:95.8%"></i><i class="bo" style="width:4.2%"></i></div><span class="c">391 / 17</span></div><div class="hr"><span class="h">21</span><div class="bar"><i class="bi" style="width:68.6%"></i><i class="bo" style="width:3.9%"></i></div><span class="c">280 / 16</span></div><div class="hr dead"><span class="h">22</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:1.0%"></i></div><span class="c">0 / 4</span></div><div class="hr dead"><span class="h">23</span><div class="bar"><i class="bi" style="width:0.0%"></i><i class="bo" style="width:2.9%"></i></div><span class="c">0 / 12</span></div>
+<p class="sub">16 點真路人 26 則＝全天最多（E 打針題＋喝酒串），我方 26 則全是五館齊發；14 點、22–23 點我方 0 則。</p>
+</section>
+
+<section class="card"><h2>一、昨天真正有人接話的是哪一段</h2>
+<h3>1. 16:43–16:52 就瘦了2館：E 的打針問題，3 個真路人 9 分鐘接完</h3>
+<blockquote class="g">我想詢問我現在是打單次3.3，護理師說3.3劑量可以分肚子兩邊打！這樣是正確的嗎？<cite>16:43 E（真路人）</cite></blockquote>
+<blockquote class="g">分兩邊沒有不行,不過沒有必要,一次打就好。／生理期會儲水原本體重就會比較重<cite>16:50 布丁🎩（真路人）</cite></blockquote>
+<blockquote class="g">不用停針啊 生理期沒有感覺是因為會水腫不是真的胖<cite>16:52 洪（真路人）—— 我方同段 0 則</cite></blockquote>
+<h3>2. 16:33–17:48 快樂瘦3館：打猛能不能喝酒，3 人 20 則</h3>
+<blockquote class="g">打這個喝啤酒會怎樣<cite>16:33 我要獸（真路人）</cite></blockquote>
+<blockquote class="g">一開始喝以為自己一樣能喝 喝到後面酒意直衝 猛健樂會讓你知道誰才是老大😆<cite>17:23 Sing（真路人）</cite></blockquote>
+<blockquote class="">不然其實東西我沒有很吃的下，但酒我喝得很下耶<cite>17:45 我要獸 —— 吃不下卻喝得下酒，我方 0（R11）</cite></blockquote>
+<p><b>為什麼是這兩段</b>：自己的身體、自己的針、好笑有經驗可講，不用懂必瘦組就能加入（11/2、11/3 同型）。</p>
+<h3>3. 20:23–21:36 就瘦了2館：Yuuuu 跟著我方便秘罐頭聊了 15 則</h3>
+<blockquote class="g">沒甚麼纖維吧 不如吃根香蕉~<cite>20:34 Yuuuu（真路人）回我方五館的「果菜汁補充」</cite></blockquote>
+<blockquote class="g">有～我後來都這樣吃<cite>20:42 安妮（我方單館）1 分鐘接 Yuuuu「211餐盤」✅</cite></blockquote>
+<p class="sub">同一份罐頭在猛健樂館真路人只有 1 則（20:37「真的！」）。</p>
+<h3>🔴 反例：搬運真路人原句（第 3 天）</h3>
+<blockquote class="b">台版先改／陸版等12月左右改<cite>21:31 Yuuuu（真路人）就瘦了2館原句 → 21:32 安妮（我方）搬到另四館，21:33 接「改完之後可能日版的CP值更高了😂」→ 22:31 喵喵「請問陸版的哪裡可以買～～」</cite></blockquote>
+</section>
+
+<section class="card"><h2>二、要回頭改的判準（🔒 只標不改）</h2>
+<div class="rl"><div class="rlh"><span class="code">R13</span><span class="rlt">🔴 處方藥價格／代購：劇本自己起頭＝fail（第 2 天，criteria_prompt.py 只到 R11）</span></div><div class="rlc">
+<blockquote class="b">主要到時候新版上市沒有殘劑變相漲價／買日版來打比較省🥹<cite>09:27 Siu Sia（我方）· 五館</cite></blockquote>
+<blockquote class="b">對啊 能省則省 有效就好<cite>09:27 ❤️芸婷（我方）· 五館</cite></blockquote>
+<blockquote class="g">請問一下日版的要去哪裡買呢？／價格多少大概多少？<cite>10:01 檸檬羽（真路人）；10:04 Mia「可報價 或推薦賣家」；11:58 米克「我帶回國是沒報關的歐！」· 就瘦了2館</cite></blockquote>
+<blockquote class="b">這樣真的寧可飛一趟日版去買回來😓💦<cite>21:35 阿鈺（我方）—— 19:10 群規「禁止公開診所處方藥物相關的販售價格／代購」才剛貼</cite></blockquote>
+<p>建議：真路人公開價格、診所、代購 → 15 分內我方單館提醒，0 處理＝fail；<b>我方劇本出現「漲價／比較省／CP值／去日本買」任一＝fail</b>；兩者同天＝封頂 30。✅ 正面樣本：12:09 鳳姐 單館回米克「出發前先打台北關專線 0800-311-005」「入境一定要走申報檯」。</p></div></div>
+<div class="rl"><div class="rlh"><span class="code">R12</span><span class="rlt">舉手不接（9/11 提、未入檔）＋同題在場（第 6 天）</span></div><div class="rlc">
+<blockquote class="g">可以問問大家買的時候都是一次付清嗎！還是有分期<cite>14:36 Rou（真路人）· 快樂瘦3館 —— 整天 0 回、沒給入口；同日三波入口全給劇本</cite></blockquote>
+<blockquote class="g">先吃肉再吃菜 最後吃白飯 妳們真的都會乾吃白飯而已疑惑🤔<cite>16:40 燈籠果妹（真路人）· 就瘦了4館 → 17:56 劇本 Gladys 嘉玲 五館問同題，答完沒 @ 她</cite></blockquote></div></div>
+<div class="rl"><div class="rlh"><span class="code">R1</span><span class="rlt">保證效果（現行判準，劇本違規）</span></div><div class="rlc">
+<blockquote class="b">一定會瘦嗎？／一定會呀～目前我推薦給我的朋友都有瘦<cite>12:27–12:28 Huang筱君／❤️芸婷（我方）· 猛健樂＋就瘦了2館</cite></blockquote></div></div>
+<div class="rl"><div class="rlh"><span class="code">R18</span><span class="rlt">藥品風險（第 7 次，這次在劇本裡）</span></div><div class="rlc">
+<blockquote class="b">但我可以省錢選擇買10打5這樣對嗎／可以喔～剛好可以打8週也在保存期限內<cite>12:22 Huang筱君／❤️芸婷（我方）</cite></blockquote></div></div>
+<div class="rl"><div class="rlh"><span class="code">R17</span><span class="rlt">值班窗口（連 13 天）</span></div><div class="rlc"><p>13:07 → 16:28 我方 0 則針對回應；沒人回的：Superstar 12:55 第二支去哪買、우미 13:37、還不想睡 14:16「7.5 轉 30 格第四天就有食慾」、Rou 14:36 分期。</p></div></div>
+</section>
+
+<section class="card"><h2>三、今天的稿：11/5（四）停滯（Doc 11j7Th2・v3混剪・題目「生理期前體重變重正常嗎」、狀態空白）</h2>
+<table><tr><th>則</th><th>11/5 稿</th><th>撞到 11/4 的</th></tr>
+<tr><td>23</td><td>鳳姐「必瘦組是里長夫人會先看／卡住你的原因是什麼」</td><td class="bad-t">🔴 Q1 服務式定義＝11/4 21:11 回真路人 緁。加一句是食品、裡面是什麼</td></tr>
+<tr><td>19</td><td>星洛「醫生…說不用再升劑量，反而省錢」</td><td class="bad-t">🔴 R5＋省錢話題＝11/4 12:22「買10打5省錢」。刪「反而省錢」</td></tr>
+<tr><td>28</td><td>群友B「不然可能都可以買好幾組必瘦組了」</td><td class="bad-t">🔴 拿針錢比價（R13 起火點型態）</td></tr>
+<tr><td>27／35</td><td>入口給群友B、群友D</td><td class="bad-t">🔴 入口全給劇本（11/4 真路人 0 : 3）</td></tr>
+<tr><td>19</td><td>星洛「女兒畢業典禮被拉去合照」</td><td class="bad-t">🔴 10/16 補寫的候選情節，掛在真鐵粉</td></tr>
+<tr><td>19／30</td><td>「半年多總共瘦了20公斤」「總共也瘦了16公斤」</td><td>🟡 R1 效果數字</td></tr>
+<tr><td>23</td><td>「不愧是敏敏營養師推薦」＋截圖</td><td>🟡 背書無出處</td></tr>
+<tr><td>開場</td><td>「水腫反而是水喝太少！」</td><td>🟡 要出處（生理期前水分滯留主因是荷爾蒙）</td></tr>
+</table><p class="sub">✅ 則25「劑量要不要調是醫師看你的狀況決定」＝11/4 12:22 的正確版本，保留。沒有「一定會瘦」。REST 只撈到 11/5 12:17，播出內容還對不到。</p></section>
+
+<div class="ft">資料：/sq-history 五館循序實撈（chat_mid 已核、hours=60，11/3 上午起＝撈全）・自己人＝七條聯集＋⑥沿用到 why1103＋人工：E（13:35 回應活動、16:43 自問劑量）改回真路人・工具 ~/scratchpad/rp1104/・逐條證據 ~/社群腳本總監/復盤_20261104.md</div>
 </div></body></html>
