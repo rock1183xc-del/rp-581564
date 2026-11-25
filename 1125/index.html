@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026/11/25 社群復盤｜未評分（資料撈不到・第8天）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#F2F4F6;--card:#fff;--line:#DCE3EA;--soft:#F7F9FB;--tx:#10171F;--tx2:#4C5A69;--tx3:#7C8B9B;
+--ac:#12557E;--acbg:#E4EEF5;--ok:#0A6E4C;--okbg:#E2F2EA;--wn:#8F6206;--wnbg:#FAEFD8;--bad:#A92A21;--badbg:#FAE6E4;
+--sh:0 1px 2px rgba(16,23,31,.06),0 10px 28px -16px rgba(16,23,31,.25)}
+@media(prefers-color-scheme:dark){:root{--bg:#0C1116;--card:#141A21;--line:#28323C;--soft:#1A222A;--tx:#E9EEF3;--tx2:#A3B0BD;--tx3:#75838F;
+--ac:#66A9D6;--acbg:#162836;--ok:#4CC08D;--okbg:#10281F;--wn:#DDA843;--wnbg:#2A2315;--bad:#EC7A70;--badbg:#2C1A19;
+--sh:0 1px 2px rgba(0,0,0,.5),0 12px 32px -18px rgba(0,0,0,.8)}}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans TC","PingFang TC",system-ui,sans-serif;font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:900px;margin:0 auto;padding:26px 16px 90px;display:flex;flex-direction:column;gap:26px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 20px;box-shadow:var(--sh)}
+h1{font-size:25px;font-weight:900;margin:0 0 6px;letter-spacing:-.01em;line-height:1.35}
+h2{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--tx3);margin:0 0 16px;display:flex;align-items:center;gap:10px;font-family:"IBM Plex Mono",monospace}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h3{font-size:17px;font-weight:700;margin:26px 0 10px;line-height:1.5}
+h3:first-of-type{margin-top:4px}
+p{margin:0 0 12px}
+.sub{color:var(--tx2);font-size:14.5px;margin:0}
+/* 抬頭 */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--bad)}
+.heroTop{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+.score{text-align:right;flex:none}
+.score .n{font-size:58px;font-weight:900;line-height:.95;color:var(--bad);font-family:"IBM Plex Mono",monospace}
+.score .d{font-size:12px;color:var(--tx3);letter-spacing:.1em}
+.cap{margin-top:14px;background:var(--badbg);border:1px solid var(--bad);border-radius:4px;padding:10px 13px;font-size:14px;color:var(--tx);font-weight:500}
+/* 警示 */
+.alarm{border:2px solid var(--bad);background:var(--badbg)}
+.alarm h2{color:var(--bad)}.alarm h2::after{background:var(--bad);opacity:.35}
+/* 三題 */
+.q{display:grid;grid-template-columns:62px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0;padding-top:2px}
+.qk{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:17px;color:var(--tx3)}
+.qk .b{display:block;margin-top:5px;font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:2.5px 0;text-align:center;border-radius:3px;background:var(--badbg);color:var(--bad);border:1px solid var(--bad)}
+.qk .b.p{background:var(--okbg);color:var(--ok);border-color:var(--ok)}
+.qt{font-weight:700;margin-bottom:5px}
+.qe{font-size:14.5px;color:var(--tx2)}
+/* 數字 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px}
+.tile{background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:13px 14px}
+.tile .l{font-size:11.5px;color:var(--tx3);letter-spacing:.05em;margin-bottom:5px}
+.tile .v{font-size:26px;font-weight:900;font-family:"IBM Plex Mono",monospace;line-height:1.1}
+.tile .s{font-size:12px;color:var(--tx3);margin-top:3px}
+.tile.bad .v{color:var(--bad)}.tile.ok .v{color:var(--ok)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:10px 0 4px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;color:var(--tx3);font-weight:700;background:var(--soft)}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.bad-t{color:var(--bad);font-weight:700}.ok-t{color:var(--ok);font-weight:700}
+/* 引句 */
+blockquote{margin:9px 0;padding:10px 14px;background:var(--soft);border-left:3px solid var(--ac);border-radius:0 4px 4px 0;font-size:14.5px;color:var(--tx);white-space:pre-line}
+blockquote.b{border-left-color:var(--bad)}
+blockquote.g{border-left-color:var(--ok)}
+cite{display:block;font-style:normal;font-size:12px;color:var(--tx3);margin-top:6px;font-family:"IBM Plex Mono",monospace}
+/* 紅線 */
+.rl{border:1px solid var(--line);border-radius:5px;margin-bottom:13px;overflow:hidden}
+.rlh{display:flex;align-items:center;gap:10px;padding:10px 13px;background:var(--soft);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.code{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:13px;padding:2px 8px;border-radius:3px;background:var(--badbg);color:var(--bad);border:1px solid var(--bad)}
+.code.w{background:var(--wnbg);color:var(--wn);border-color:var(--wn)}
+.code.g{background:var(--okbg);color:var(--ok);border-color:var(--ok)}
+.rlt{font-weight:700;font-size:15px}
+.rlc{padding:13px}
+.src{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--tx3)}
+/* 值班條 */
+.hr{display:grid;grid-template-columns:38px 1fr 76px;gap:9px;align-items:center;font-size:13px;padding:2.5px 0}
+.hr .h{font-family:"IBM Plex Mono",monospace;color:var(--tx3);font-size:12px}
+.bar{display:flex;height:15px;border-radius:2px;overflow:hidden;background:var(--soft)}
+.bar i{display:block;height:100%}
+.bi{background:var(--ac)}.bo{background:var(--bad)}
+.hr .c{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--tx3);text-align:right}
+.hr.dead{background:var(--badbg);border-radius:3px;padding:2.5px 5px;margin:0 -5px}
+.lg{display:flex;gap:16px;font-size:12px;color:var(--tx3);margin-bottom:9px}
+.lg s{text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+ul{margin:8px 0;padding-left:20px}li{margin-bottom:6px}
+.note{background:var(--acbg);border:1px solid var(--ac);border-radius:4px;padding:12px 14px;font-size:14.5px;margin:12px 0}
+.note.b{background:var(--badbg);border-color:var(--bad)}
+.note.g{background:var(--okbg);border-color:var(--ok)}
+.note.w{background:var(--wnbg);border-color:var(--wn)}
+.ft{text-align:center;font-size:12px;color:var(--tx3);padding-top:6px;line-height:2}
+code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--soft);padding:1.5px 5px;border-radius:3px;border:1px solid var(--line)}
+pre{background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:12px;overflow-x:auto;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.7;margin:10px 0}
+@media(max-width:560px){.score .n{font-size:44px}h1{font-size:21px}.q{grid-template-columns:54px 1fr}}
+</style>
+</head><body><div class="wrap">
+<section class="card hero"><div class="heroTop"><div><h1>2026/11/25（三）社群復盤</h1>
+<p class="sub"><b>partial / blocked（第 8 天）</b>：11/25 五館訊息一則都沒拿到，不打分、不寫「誰接話」。⛔ 沒拿前幾天的數字冒充昨天。</p></div>
+<div class="score"><div class="n mono">—</div><div class="d">未評分</div></div></div>
+<div class="cap"><b>卡在哪：</b>bot 的 LINE 帳號從 11/18 起登出。<code>/report/2026-11-25</code> 404；<code>/sq-history</code> 11/26 07:33–07:34 重試 3 次都是 <code>not logged in</code>；<code>/health</code> watching=false。<b>要操盤手在手機 LINE 幫 bot 重登</b>，之後補跑 11/18–11/25（總表第 80–87 列，hours ≥210，撈不撈得回來要實測）。</div></section>
+<section class="card alarm"><h2>一眼看完</h2><table>
+<tr><th>項目</th><th>結論</th></tr>
+<tr><td>分數</td><td class="bad-t">未評分：沒有資料</td></tr>
+<tr><td>🔴 今天 11/26 發前</td><td class="bad-t">昨天點評後又改版（Angela 換小鹿），新版更重：則07「必瘦組可以解決掉髮問題」「頭髮留住了還長更多」、則17「停滯期都是一週就過了」、則12「都會再長回來」（跟則35「沒辦法保證」矛盾）、停針後維持一本 4 次；稿後說明跟正文對不上，要刪。</td></tr>
+<tr><td>🔴 明天 11/27</td><td class="bad-t">截止線後整段跟 11/26 一字不差（連 3 本）；則07 星洛「每天很順暢…沒有肚子絞痛」、則16／23 補寫排便畫面；則32「那些針才算沒有白打」連第 3 本；稿後說明則號對不上。</td></tr>
+<tr><td>最該改的判準（只標）</td><td>criteria_prompt.py 第 41 行 R1 補「跨本共用台詞」：同一句一字不差出現在連續兩本＝重複扣分。昨天標了，今天證據變成連 3 本、整段 9 則。</td></tr>
+<tr><td>✅ 有改進</td><td>11/26 則35–36 不保證＋交還醫生；11/27 則21 講出誰不需要、則10 不是固定套組、則27 軟便藥交還醫生。</td></tr>
+</table></section>
+<section class="card"><h2>三本共用的句子（截止線後幾乎原封不動）</h2>
+<table><tr><th>句子</th><th>11/25</th><th>11/26</th><th>11/27</th></tr><tr><td>我想問一個比較直接的</td><td>11/25 則48</td><td>11/26 則35</td><td>11/27 則35</td></tr><tr><td>里長夫人會陪你把做得到的飲食習慣，一點一點養起來</td><td>—</td><td>11/26 則37</td><td>11/27 則35</td></tr><tr><td>我還有一個擔心／會不會買完就被放著？</td><td>—</td><td>11/26 則38</td><td>11/27 則36</td></tr><tr><td>里長夫人有正職／所以我跟菜菜會一起協助</td><td>11/25 則52</td><td>11/26 則38</td><td>11/27 則36</td></tr><tr><td>一個人在忙，另一個也接得到／至少陪你一年</td><td>11/25 則53</td><td>11/26 則39</td><td>11/27 則37</td></tr><tr><td>那他自己懂不懂啊？／里長夫人也一直跟醫生、營養師持續進修</td><td>—</td><td>11/26 則39–40</td><td>11/27 則37–38</td></tr><tr><td>這幾種人特別適合先找里長夫人聊</td><td>—</td><td>11/26 則41</td><td>11/27 則41</td></tr><tr><td>針錢才算沒白花（換字）</td><td>11/25 則46</td><td>11/26 則33</td><td>11/27 則32</td></tr></table></section>
+<section class="card"><h2>今天 11/26（四）掉髮（Doc 1ZHhn9w・11/26 07:3x 版）</h2><table><tr><th>則</th><th>稿</th><th>判斷</th></tr><tr><td>全本</td><td>11/25 07:1x 讀的版本是 Angela 當前段鐵粉；現在換成小鹿，則07–23 幾乎全改（Doc）</td><td class="bad-t">🔴 昨天點評之後又改過；以下以 11/26 07:3x 總表當下連結的內容為準</td></tr><tr><td>07</td><td><blockquote class="b">後來我在群裡看多人講必瘦組可以解決掉髮問題<cite>小鹿</cite></blockquote></td><td class="bad-t">🔴 R1：「必瘦組可以解決掉髮問題」是直接功效宣稱，比昨天 Emma 那句更重；稿後說明自己寫了「必瘦組改善掉髮沒有證據」</td></tr><tr><td>07</td><td><blockquote class="b">結果不只頭髮留住了還長更多<cite>小鹿</cite></blockquote></td><td class="bad-t">🔴 R1：緊接「搭配必瘦組」，讀起來是搭了頭髮長更多</td></tr><tr><td>17</td><td><blockquote class="b">所以連我常常一兩個月的停滯期都是一週就過了<cite>小鹿</cite></blockquote></td><td class="bad-t">🔴 R1：停滯期一週就過＝效果承諾，掉髮題又順帶打停滯</td></tr><tr><td>12</td><td><blockquote class="b">這種只要後續有對的配套措施都會再長回來喔<cite>里長夫人</cite></blockquote></td><td class="bad-t">🔴 R1 絕對化：「都會再長回來」；則35 鳳姐自己說「沒辦法保證」，同一本前後矛盾</td></tr><tr><td>07／17／19／27</td><td><blockquote class="b">現在停針超過半年了<cite>小鹿</cite></blockquote></td><td class="bad-t">🔴 R1 重複：停針後維持一本 4 次（07、17「超過半年了都沒變回左邊的樣子」、19「我已經半年沒胖回去了」、27 Emma「到現在超過半年，頭髮還在」）</td></tr><tr><td>27</td><td><blockquote class="b">兩個月左右，洗頭掉的量慢慢變少<cite>Emma太太</cite></blockquote></td><td class="bad-t">🔴 R1：昨天已點，沒改</td></tr><tr><td>27</td><td><blockquote class="b">中間以為是針的關係，自己先停針<cite>Emma太太</cite></blockquote></td><td class="bad-t">🔴 自行停針＋復胖情節，稿後說明待裁，沒改</td></tr><tr><td>33</td><td><blockquote class="b">後來搭了必瘦組再好好打，針錢才算沒白花<cite>Emma太太</cite></blockquote></td><td class="bad-t">🔴 R1 因果；11/25 則46 同句、11/27 則32「那些針才算沒有白打」，連 3 本</td></tr><tr><td>稿後說明</td><td>22 小鹿「能瘦又能保住頭髮，就是我想要的❤️」（Doc）</td><td class="bad-t">🔴 稿後說明跟正文對不上：正文 22 已改成「能瘦又能美美的」；還寫 20 鳳姐六個成分、25 Angela，正文都沒有；自己寫「必瘦組計數沒重算」。整段發前要刪</td></tr><tr><td>則號</td><td>03 後跳 05；12 後跳 16；23 後跳 26；28 後跳 30；多則沒編號（全本）</td><td class="">🟡 照則號點名會對不上</td></tr><tr><td>40</td><td>（敏敏推薦記事本＋採訪截圖）（素材）</td><td class="">🟡 敏敏連 3 本</td></tr><tr><td>39</td><td><blockquote class="b">至少陪你一年<cite>鳳姐</cite></blockquote></td><td class="">🟡 服務承諾，連 4 本</td></tr><tr><td>35</td><td><blockquote class="g">老實說，沒辦法保證搭了就不會掉<cite>鳳姐</cite></blockquote></td><td class="">✅ 不保證</td></tr><tr><td>36</td><td><blockquote class="g">調整一陣子還是掉很多，會先請你給醫生確認原因<cite>鳳姐</cite></blockquote></td><td class="">✅ 有條件地交還醫生</td></tr></table></section>
+<section class="card"><h2>明天 11/27（五）便秘（Doc 1D4_nIr・讀「週六週一模組」）</h2><table><tr><th>則</th><th>稿</th><th>判斷</th></tr><tr><td>截止線後</td><td>則35–43 跟 11/26 則35–43 幾乎一字不差（稿後說明：「截止線後沒動」）（全本）</td><td class="bad-t">🔴 R1 跨本共用台詞：連 3 本（11/25、11/26、11/27）同一段，見下表</td></tr><tr><td>07</td><td><blockquote class="b">搭了之後就每天很順暢，喝到瘦下來也都沒有肚子絞痛過<cite>星洛</cite></blockquote></td><td class="bad-t">🔴 R1：便秘題的功效句；稿後說明自評中、自己給了降風險選項「搭了之後就比較順了」</td></tr><tr><td>16</td><td><blockquote class="b">後來吃不完的那塊交給必瘦組補，不用再硬塞<cite>星洛</cite></blockquote></td><td class="bad-t">🔴 R1：緊接「下午也不會再脹到不想動」，補寫的生活畫面</td></tr><tr><td>23</td><td><blockquote class="b">下午也不用一直找廁所<cite>星洛</cite></blockquote></td><td class="bad-t">🔴 R1：補寫的排便改善畫面（稿後說明自寫補寫）</td></tr><tr><td>27</td><td><blockquote class="b">卡住的體重也開始往下，又瘦了12公斤<cite>語霏</cite></blockquote></td><td class="">🟡 真人定稿原話，但緊接「再搭配必瘦組」，讀起來是因果；軟便藥交還醫生 ✅</td></tr><tr><td>32</td><td><blockquote class="b">搭了必瘦組之後，體重又開始動／那些針才算沒有白打<cite>語霏</cite></blockquote></td><td class="bad-t">🔴 R1 因果＋「針錢沒白花」換字連第 3 本</td></tr><tr><td>09</td><td><blockquote class="b">是讓便便自己好推，不是硬逼你拉<cite>星洛</cite></blockquote></td><td class="">🟡 後半偏功能；稿後說明的降風險選項是拿掉</td></tr><tr><td>09 後／10 後</td><td><blockquote class="b">吃進食物不久就有想便便的感覺不會肚子痛<cite>顧客截圖 charmy</cite></blockquote></td><td class="">🟡 顧客原話但讀起來是功效；上群前要遮名字頭像</td></tr><tr><td>稿後說明</td><td>12 圖卡、17 果菜汁、20 DM、25 服務黑圖、06 星洛風險句（Doc）</td><td class="bad-t">🔴 稿後說明的則號跟正文對不上（正文是 13、18、21；服務黑圖段已刪；06 不是星洛）；整段發前要刪</td></tr><tr><td>38</td><td>（敏敏推薦記事本＋採訪截圖）（素材）</td><td class="">🟡 敏敏連 4 本</td></tr><tr><td>21</td><td><blockquote class="g">自己調得來，當然不一定需要<cite>鳳姐</cite></blockquote></td><td class="">✅ 講出誰不需要</td></tr><tr><td>10</td><td><blockquote class="g">我們兩個搭的方式就不一樣<cite>星洛</cite></blockquote></td><td class="">✅ 不是固定套組，用真人原話講</td></tr></table></section>
+<div class="ft">資料：11/25 無（bot LINE 登出）・兩本 Doc 為 11/26 07:3x 總表「大腳本區2.0」當下連結・逐條證據 ~/社群腳本總監/復盤_20261125.md</div>
+</div></body></html>
